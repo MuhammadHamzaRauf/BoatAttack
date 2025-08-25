@@ -12,8 +12,7 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - BOOLEAN_5C6B42CA_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - BOOLEAN_D0D03BFD_ON
   - VERTEX_ANIMATION_ON
@@ -31,7 +30,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_B222E8F:
-        m_Texture: {fileID: 2800000, guid: 8fd1a09f036e77d46a48c04c8d159cb9, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3dd104d27e26d04ca878f32e280bd83, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D9BFD5F1:
@@ -96,7 +95,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - BOOLEAN_5C6B42CA: 1
+    - BOOLEAN_5C6B42CA: 0
     - BOOLEAN_7021FEFA: 0
     - BOOLEAN_D0D03BFD: 1
     - Boolean_F799EE7C: 1
@@ -139,7 +138,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4387878321562579853
+--- !u!114 &136808967152385330
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
