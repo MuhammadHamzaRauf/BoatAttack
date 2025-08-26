@@ -51,13 +51,19 @@ namespace BoatAttack.UI
 
         public void SetupSingleplayerGame()
         {
-            RaceManager.SetGameType(RaceManager.GameType.Singleplayer);
+            RaceManager.SetGameType(RaceManager.GameType.Chase);
             SetupDefaults();
         }
 
         public void SetupSpectatorGame()
         {
             RaceManager.SetGameType(RaceManager.GameType.Spectator);
+            SetupDefaults();
+        }
+
+        public void SetupChaseGame()
+        {
+            RaceManager.SetGameType(RaceManager.GameType.Chase);
             SetupDefaults();
         }
 

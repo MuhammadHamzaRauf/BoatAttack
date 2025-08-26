@@ -30,6 +30,19 @@ Boat Attack is a Unity URP demo showcasing high-quality water rendering, boat ph
 - **Race Management**: Lap timing, position tracking, and race completion
 - **AI Follow Mode**: Boats can follow the player with smooth behavior
 
+### 🧭 **Chase Mode (Additive)**
+- Add-on AI behavior for non-player boats to pursue the player while maintaining spacing.
+- Components:
+  - `AIChaseController` (per boat): minimal brain that drives the existing `Engine` with steer/throttle.
+  - `AIChaseManager` (optional): scene helper to toggle chase across multiple boats.
+- Public API (`AIChaseController`):
+  - `StartChasing(Transform player)`
+  - `StopChasingAndReturnToBase()`
+  - `Deactivate()`
+- Tunables (serialized): `player`, `chaseMinDistance`, `desiredSpeed`, `steerGain`, `throttleGain`, `throttleSlewRate`, `steerSlewRate`, `returnTolerance`, `returnSpeed`.
+- Events: `onInsideMinDistance`, `onArrivedAtBase`.
+- Gizmos: base/home point and min-distance ring.
+
 ### 📱 **Mobile Support**
 - **Touch Controls**: On-screen joystick and buttons for mobile devices
 - **Auto-Detection**: Automatically enables on Android/iOS builds
@@ -120,6 +133,72 @@ lookAheadTime = 0.75f;    // Prediction time for smooth following
 // Assign the AI boat and player boat in the Inspector
 // The script will automatically set up AI follow mode
 ```
+
+## Chase Mode Usage
+
+### Enable on an AI Boat
+1. Add `AIChaseController` to any AI boat GameObject (keep existing AI untouched for other modes).
+2. Optionally assign `basePoint`. If left empty, current position at Start is used as home/base.
+3. From code, call one of the public methods:
+```csharp
+// Begin chasing the player transform
+aiChaseController.StartChasing(playerTransform);
+
+// Stop chasing and navigate back to base, then idle
+aiChaseController.StopChasingAndReturnToBase();
+
+// Fully deactivate/idle (no forces applied)
+aiChaseController.Deactivate();
+```
+
+### RaceManager Integration
+The chase mode is fully integrated into the existing race system:
+
+1. **New Game Type**: `RaceManager.GameType.Chase` - automatically sets up chase mode
+2. **Public API Methods**:
+   ```csharp
+   // Start chase mode for all AI boats
+   RaceManager.StartChaseMode();
+   
+   // Stop chase and return to base
+   RaceManager.StopChaseMode();
+   
+   // Deactivate all AI boats
+   RaceManager.DeactivateChaseMode();
+   
+   // Get count of boats currently chasing
+   int chaseCount = RaceManager.GetChaseModeBoatCount();
+   ```
+
+3. **Automatic Setup**: When using `GameType.Chase`, AI boats automatically get `AIChaseController` components and start chasing the player.
+
+### ChaseModeController (Optional)
+Add `ChaseModeController` to any GameObject for easy scene-level control:
+
+1. **UI Integration**: Assign buttons for Start/Stop/Deactivate chase mode
+2. **Status Display**: Shows count of boats currently chasing
+3. **Static Access**: Use `ChaseModeController.StartChase()` from anywhere in code
+4. **Context Menu**: Right-click component for quick testing
+
+### Tuning Fields (Inspector)
+- `player` (Transform): Optional default target. Can be assigned at runtime via API.
+- `desiredSpeed` (float): Target forward speed while chasing.
+- `chaseMinDistance` (float): Standoff distance; inside this the boat slows/holds.
+- `steerGain`, `throttleGain` (floats): Responsiveness for steering and throttle.
+- `steerSlewRate`, `throttleSlewRate` (floats): Optional smoothing to reduce oscillation.
+- `returnTolerance` (float): Distance to home considered "arrived".
+- `returnSpeed` (float): Forward speed while returning to base.
+
+### Optional Scene-Level Control
+- Add `AIChaseManager` and it will automatically find boats and player from the scene
+- **Automatic Discovery**: Finds all boats with `AiController` and player boats with `HumanController`
+- **No Manual Assignment**: Automatically adds `AIChaseController` components to AI boats
+- Use `enableOnStart` to automatically start chase when the scene begins
+- **Simple Setup**: Just add the component to any GameObject in your scene
+
+Acceptance: Existing race and free-roam modes are unaffected. Chase can be toggled per boat or globally via the manager.
+
+
 
 ## Mobile Build Notes
 

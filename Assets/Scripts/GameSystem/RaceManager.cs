@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using BoatAttack.UI;
+using BoatAttack.AI;
 using UnityEngine.Playables;
 using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
@@ -24,7 +25,8 @@ namespace BoatAttack
             LocalMultiplayer = 1,
             Multiplayer = 2,
             Spectator = 3,
-            Benchmark = 4
+            Benchmark = 4,
+            Chase = 5
         }
 
         [Serializable]
@@ -87,6 +89,8 @@ namespace BoatAttack
                     break;
                 case GameType.Benchmark:
                     break;
+                case GameType.Chase:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -136,6 +140,11 @@ namespace BoatAttack
                 case GameType.Spectator:
                     ReplayCamera.Instance.EnableSpectatorMode();
                     break;
+                case GameType.Chase:
+                    yield return Instance.StartCoroutine(CreatePlayerUi(0));
+                    SetupCamera(0); // setup camera for player 1
+                    SetupChaseMode(); // setup AI boats for chase mode
+                    break;
                 case GameType.Benchmark:
                     break;
                 default:
@@ -165,6 +174,12 @@ namespace BoatAttack
                     break;
                 case GameType.Spectator:
                     GenerateRandomBoats(RaceData.boatCount);
+                    break;
+                case GameType.Chase:
+                    var playerBoat = new BoatData();
+                    playerBoat.human = true; // player boat
+                    RaceData.boats.Add(playerBoat);
+                    GenerateRandomBoats(RaceData.boatCount - 1); // add AI boats for chasing
                     break;
                 case GameType.LocalMultiplayer:
                     Debug.LogError("Not Implemented");
@@ -368,6 +383,167 @@ namespace BoatAttack
             }
             return -1;
         }
+
+        #region Chase Mode API
+        
+        /// <summary>
+        /// Sets up AI boats for chase mode by adding AIChaseController components
+        /// </summary>
+        private static void SetupChaseMode()
+        {
+            if (RaceData == null || RaceData.boats == null) return;
+            
+            // Find the player boat (human = true)
+            Transform playerTransform = null;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                if (RaceData.boats[i].human && RaceData.boats[i].Boat != null)
+                {
+                    playerTransform = RaceData.boats[i].Boat.transform;
+                    break;
+                }
+            }
+            
+            if (playerTransform == null)
+            {
+                Debug.LogWarning("Chase Mode: No player boat found!");
+                return;
+            }
+            
+            // Setup AI boats for chasing
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                var boatData = RaceData.boats[i];
+                if (boatData.human || boatData.Boat == null) continue; // Skip player boat
+                
+                // Add AIChaseController if not already present
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController == null)
+                {
+                    chaseController = boatData.Boat.gameObject.AddComponent<AIChaseController>();
+                }
+                
+                // Set the player as target and start chasing
+                chaseController.StartChasing(playerTransform);
+            }
+            
+            Debug.Log($"Chase Mode: Setup complete. {RaceData.boats.Count - 1} AI boats are now chasing the player.");
+        }
+        
+        /// <summary>
+        /// Start chase mode for all AI boats
+        /// </summary>
+        public static void StartChaseMode()
+        {
+            if (RaceData == null || RaceData.boats == null) return;
+            
+            Transform playerTransform = null;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                if (RaceData.boats[i].human && RaceData.boats[i].Boat != null)
+                {
+                    playerTransform = RaceData.boats[i].Boat.transform;
+                    break;
+                }
+            }
+            
+            if (playerTransform == null)
+            {
+                Debug.LogWarning("StartChaseMode: No player boat found!");
+                return;
+            }
+            
+            int chaseCount = 0;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                var boatData = RaceData.boats[i];
+                if (boatData.human || boatData.Boat == null) continue;
+                
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
+                {
+                    chaseController.StartChasing(playerTransform);
+                    chaseCount++;
+                }
+            }
+            
+            Debug.Log($"StartChaseMode: {chaseCount} AI boats are now chasing the player.");
+        }
+        
+        /// <summary>
+        /// Stop chase mode and make AI boats return to base
+        /// </summary>
+        public static void StopChaseMode()
+        {
+            if (RaceData == null || RaceData.boats == null) return;
+            
+            int returnCount = 0;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                var boatData = RaceData.boats[i];
+                if (boatData.human || boatData.Boat == null) continue;
+                
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
+                {
+                    chaseController.StopChasingAndReturnToBase();
+                    returnCount++;
+                }
+            }
+            
+            Debug.Log($"StopChaseMode: {returnCount} AI boats are returning to base.");
+        }
+        
+        /// <summary>
+        /// Deactivate all AI boats (stop all behaviors)
+        /// </summary>
+        public static void DeactivateChaseMode()
+        {
+            if (RaceData == null || RaceData.boats == null) return;
+            
+            int deactivateCount = 0;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                var boatData = RaceData.boats[i];
+                if (boatData.human || boatData.Boat == null) continue;
+                
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
+                {
+                    chaseController.Deactivate();
+                    deactivateCount++;
+                }
+            }
+            
+            Debug.Log($"DeactivateChaseMode: {deactivateCount} AI boats have been deactivated.");
+        }
+        
+        /// <summary>
+        /// Get the number of AI boats currently in chase mode
+        /// </summary>
+        public static int GetChaseModeBoatCount()
+        {
+            if (RaceData == null || RaceData.boats == null) return 0;
+            
+            int count = 0;
+            for (int i = 0; i < RaceData.boats.Count; i++)
+            {
+                var boatData = RaceData.boats[i];
+                if (!boatData.human && boatData.Boat != null)
+                {
+                    var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                    if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Chasing)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+        
+        #endregion
+        
+
         
         #endregion
     }
