@@ -20,7 +20,12 @@ Feel free to post any issues, but know this is a 'as is' repo, it's meant more f
   * Custom Universal RP rendering for planar reflections via [SRP callbacks](https://docs.unity3d.com/ScriptReference/Rendering.RenderPipelineManager.html)
   * Custom SciptableRenderPass usage for WaterFX and Caustics
   * Gerstner based water system in local package(WIP)
+  * **NEW**: Mobile touch controls with on-screen UI
+  * **NEW**: AI "Follow Player" mode for boats
+  * **NEW**: Cross-platform input abstraction system
   * Much more..
+
+**📱 [Mobile Controls & AI Features](OVERVIEW.md)** - Complete guide to new mobile and AI capabilities
 
 [Demo Footage](https://drive.google.com/file/d/1PTNdhnqbhzSWUCfAinIefP5cfr6Dezuw/view)
 

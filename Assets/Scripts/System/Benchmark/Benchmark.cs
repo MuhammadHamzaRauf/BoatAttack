@@ -354,16 +354,16 @@ namespace BoatAttack.Benchmark
         public TestInfo(string benchmarkName, string urpVersion = "N/A")
         {
             BenchmarkName = benchmarkName;
-            Scene = Utility.RemoveWhitespace(SceneManager.GetActiveScene().name);
+            Scene = global::Utility.RemoveWhitespace(SceneManager.GetActiveScene().name);
             UnityVersion = Application.unityVersion;
             UrpVersion = urpVersion;
             BoatAttackVersion = Application.version;
-            Platform =  Utility.RemoveWhitespace(Application.platform.ToString());
-            API =  Utility.RemoveWhitespace(SystemInfo.graphicsDeviceType.ToString());
-            CPU =  Utility.RemoveWhitespace(SystemInfo.processorType);
-            GPU =  Utility.RemoveWhitespace(SystemInfo.graphicsDeviceName);
-            Os =  Utility.RemoveWhitespace(SystemInfo.operatingSystem);
-            Quality =  Utility.RemoveWhitespace(QualitySettings.names[QualitySettings.GetQualityLevel()]);
+            Platform =  global::Utility.RemoveWhitespace(Application.platform.ToString());
+            API =  global::Utility.RemoveWhitespace(SystemInfo.graphicsDeviceType.ToString());
+            CPU =  global::Utility.RemoveWhitespace(SystemInfo.processorType);
+            GPU =  global::Utility.RemoveWhitespace(SystemInfo.graphicsDeviceName);
+            Os =  global::Utility.RemoveWhitespace(SystemInfo.operatingSystem);
+            Quality =  global::Utility.RemoveWhitespace(QualitySettings.names[QualitySettings.GetQualityLevel()]);
             Resolution = $"{Display.main.renderingWidth}x{Display.main.renderingHeight}";
         }
     }

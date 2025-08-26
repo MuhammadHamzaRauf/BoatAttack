@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Editor = UnityEditor.Editor;
 
 [CustomEditor(typeof(GlobalVolumeFeature))]
 public class GlobalVolumeFeatureEditor : Editor

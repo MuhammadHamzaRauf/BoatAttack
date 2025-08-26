@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.InputSystem;
 
 namespace BoatAttack
 {
@@ -21,6 +22,63 @@ namespace BoatAttack
         public Text _staticCamText;
         private int _curStaticCam = 0;
 
+        // Input System
+        private InputControls _controls;
+        private bool _cameraTogglePressed;
+        private bool _nextCameraPressed;
+        private bool _prevCameraPressed;
+        private bool _toggleUIPressed;
+
+        private void Awake()
+        {
+            _controls = new InputControls();
+            
+            // Bind to input actions
+            _controls.BoatControls.Trottle.performed += context => {
+                if (context.ReadValue<float>() > 0.5f) // Space key is bound to Throttle
+                {
+                    _cameraTogglePressed = true;
+                }
+            };
+            _controls.BoatControls.Trottle.canceled += context => _cameraTogglePressed = false;
+            
+            _controls.BoatControls.Steering.performed += context => {
+                float value = context.ReadValue<float>();
+                if (value > 0.5f) // Right arrow
+                {
+                    _nextCameraPressed = true;
+                }
+                else if (value < -0.5f) // Left arrow
+                {
+                    _prevCameraPressed = true;
+                }
+            };
+            _controls.BoatControls.Steering.canceled += context => {
+                _nextCameraPressed = false;
+                _prevCameraPressed = false;
+            };
+
+            // Handle H key for UI toggle
+            _controls.BoatControls.Pause.performed += context => {
+                _toggleUIPressed = true;
+            };
+        }
+
+        private void OnEnable()
+        {
+            _controls?.BoatControls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _controls?.BoatControls.Disable();
+        }
+
+        private void OnDestroy()
+        {
+            _controls?.Dispose();
+        }
+
         private void Start()
         {
             
@@ -28,22 +86,36 @@ namespace BoatAttack
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Handle camera toggle (Space key)
+            if (_cameraTogglePressed)
             {
                 if (_camModes == CameraModes.Cutscene)
                     StaticCams();
                 else
                     PlayCutscene();
+                _cameraTogglePressed = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            // Handle next camera (Right arrow)
+            if (_nextCameraPressed)
+            {
                 NextStaticCam();
+                _nextCameraPressed = false;
+            }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            // Handle previous camera (Left arrow)
+            if (_prevCameraPressed)
+            {
                 PrevStaticCam();
+                _prevCameraPressed = false;
+            }
 
-            if (Input.GetKeyDown(KeyCode.H) || (Input.touchCount > 0 && Input.touches[0].tapCount == 2))
+            // Handle UI toggle (H key or double tap)
+            if (_toggleUIPressed)
+            {
                 UI.SetActive(!UI.activeSelf);
+                _toggleUIPressed = false;
+            }
         }
         public void PlayCutscene()
         {

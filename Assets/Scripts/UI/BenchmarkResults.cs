@@ -96,9 +96,9 @@ public class BenchmarkResults : MonoBehaviour
     {
         foreach (var child in infoPanel)
         {
-            Utility.SafeDestroyChildren(child);
+            global::Utility.SafeDestroyChildren(child);
         }
-        Utility.SafeDestroyChildren(dataPanel);
+        global::Utility.SafeDestroyChildren(dataPanel);
     }
 
     private TextMeshProUGUI CreateTextObject(string text, Transform parent = null, string name = "text-object")
@@ -120,7 +120,7 @@ public class BenchmarkResults : MonoBehaviour
     {
         //// Setup row objects (for styling) ////
         var tableRowsGo = new GameObject("Rows", typeof(VerticalLayoutGroup));
-        Utility.ParentAndFillRectTransform(tableRowsGo.transform, container);
+        global::Utility.ParentAndFillRectTransform(tableRowsGo.transform, container);
         // row layout
         var rowControl = tableRowsGo.GetComponent<VerticalLayoutGroup>();
         rowControl.padding = new RectOffset(padding, padding, padding, padding);
@@ -141,7 +141,7 @@ public class BenchmarkResults : MonoBehaviour
         
         //// Setup Main table ////
         var tableGo = new GameObject("Table", typeof(HorizontalLayoutGroup));
-        Utility.ParentAndFillRectTransform(tableGo.transform, container);
+        global::Utility.ParentAndFillRectTransform(tableGo.transform, container);
         // column layout
         var columnControl = tableGo.GetComponent<HorizontalLayoutGroup>();
         columnControl.padding = new RectOffset(padding, padding, padding, padding);

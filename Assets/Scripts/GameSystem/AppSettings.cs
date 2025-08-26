@@ -87,7 +87,7 @@ namespace BoatAttack
         {
             CleanupCameras();
 #if STATIC_EVERYTHING
-            Utility.StaticObjects();
+            global::Utility.StaticObjects();
 #endif
             Instance.Invoke(nameof(CleanupLoadingScreen), 0.5f);
         }
@@ -135,7 +135,7 @@ namespace BoatAttack
         private void Update()
         {
 #if !UNITY_EDITOR
-            Utility.CheckQualityLevel(); //TODO - hoping to remove one day when we have a quality level callback
+            global::Utility.CheckQualityLevel(); //TODO - hoping to remove one day when we have a quality level callback
 #endif
 
             if (!MainCamera) return;
