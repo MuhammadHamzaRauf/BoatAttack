@@ -1,5 +1,4 @@
 using UnityEngine;
-using BoatAttack.BoatInput;
 
 namespace BoatAttack.AI
 {
@@ -7,7 +6,7 @@ namespace BoatAttack.AI
     /// AI input that makes a boat follow a target player
     /// </summary>
     [RequireComponent(typeof(Rigidbody))]
-    public class AIFollowInput : MonoBehaviour, IBoatInput
+    public class AIFollowInput : MonoBehaviour
     {
         [Header("Target Settings")]
         [SerializeField] private Transform target;
@@ -24,6 +23,7 @@ namespace BoatAttack.AI
         [Header("Debug")]
         [SerializeField] private bool showGizmos = true;
         
+        // Input values that can be read by HumanController
         public float Throttle { get; private set; }
         public float Steer { get; private set; }
         public bool Brake { get; private set; }
@@ -32,10 +32,12 @@ namespace BoatAttack.AI
         private Rigidbody rb;
         private Vector3 _lastTargetPos;
         private Vector3 _targetVelocity;
+        private Engine _engine;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            _engine = GetComponent<Engine>();
         }
 
         void Start()
@@ -60,7 +62,7 @@ namespace BoatAttack.AI
             }
         }
 
-        public void Tick()
+        void FixedUpdate()
         {
             if (target == null) return;
 
@@ -115,6 +117,13 @@ namespace BoatAttack.AI
             // Clamp outputs to prevent extreme values
             Throttle = Mathf.Clamp(Throttle, -1f, 1f);
             Steer = Mathf.Clamp(Steer, -1f, 1f);
+            
+            // Apply input directly to engine if available
+            if (_engine != null)
+            {
+                _engine.Accelerate(Throttle);
+                _engine.Turn(Steer);
+            }
         }
 
         private void OnDrawGizmosSelected()
@@ -150,5 +159,11 @@ namespace BoatAttack.AI
                 _lastTargetPos = target.position;
             }
         }
+        
+        // Public methods for external control (compatible with old system)
+        public void SetThrottle(float value) => Throttle = Mathf.Clamp(value, -1f, 1f);
+        public void SetSteer(float value) => Steer = Mathf.Clamp(value, -1f, 1f);
+        public float GetThrottle() => Throttle;
+        public float GetSteer() => Steer;
     }
 }

@@ -65,7 +65,7 @@ namespace BoatAttack
         void SetupController(bool isHuman)
         {
             var controllerType = isHuman ? typeof(HumanController) : typeof(AiController);
-            // If controller exists then make sure it's teh right one, if not add it
+            // If controller exists then make sure it's the right one, if not add it
             if (_controller)
             {
                 if (_controller.GetType() == controllerType) return;

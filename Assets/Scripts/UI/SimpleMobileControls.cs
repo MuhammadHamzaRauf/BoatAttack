@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using BoatAttack.BoatInput;
 
 namespace BoatAttack.UI
 {
     /// <summary>
     /// Simple mobile controls with basic buttons for boat movement
+    /// Works with the updated HumanController system
     /// </summary>
     public class SimpleMobileControls : MonoBehaviour
     {
@@ -19,17 +19,16 @@ namespace BoatAttack.UI
         [SerializeField] private float steerValue = 0.5f;
         [SerializeField] private float throttleValue = 0.5f;
         
-        private MobileBoatInput _mobileInput;
+        private HumanController _humanController;
         
         void Start()
         {
-            // Find or create mobile input component
-            _mobileInput = FindObjectOfType<MobileBoatInput>();
-            if (_mobileInput == null)
+            // Find the HumanController component
+            _humanController = FindObjectOfType<HumanController>();
+            if (_humanController == null)
             {
-                var go = new GameObject("MobileBoatInput");
-                _mobileInput = go.AddComponent<MobileBoatInput>();
-                DontDestroyOnLoad(go);
+                Debug.LogWarning("SimpleMobileControls: No HumanController found in scene!");
+                return;
             }
             
             SetupButtonListeners();
@@ -52,33 +51,33 @@ namespace BoatAttack.UI
         
         public void OnLeftPressed()
         {
-            if (_mobileInput != null)
+            if (_humanController != null)
             {
-                _mobileInput.SetSteer(-steerValue);
+                _humanController.SetSteer(-steerValue);
             }
         }
         
         public void OnRightPressed()
         {
-            if (_mobileInput != null)
+            if (_humanController != null)
             {
-                _mobileInput.SetSteer(steerValue);
+                _humanController.SetSteer(steerValue);
             }
         }
         
         public void OnForwardPressed()
         {
-            if (_mobileInput != null)
+            if (_humanController != null)
             {
-                _mobileInput.SetThrottle(throttleValue);
+                _humanController.SetThrottle(throttleValue);
             }
         }
         
         public void OnReversePressed()
         {
-            if (_mobileInput != null)
+            if (_humanController != null)
             {
-                _mobileInput.SetThrottle(-throttleValue);
+                _humanController.SetThrottle(-throttleValue);
             }
         }
         
