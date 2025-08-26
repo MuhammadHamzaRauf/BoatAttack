@@ -339,6 +339,7 @@ namespace BoatAttack
         {
             var touch = Application.platform == RuntimePlatform.Android ||
                         Application.platform == RuntimePlatform.IPhonePlayer;
+            touch = true;
             var uiAsset = touch ? Instance.raceUiTouchPrefab : Instance.raceUiPrefab;
             var uiLoading = uiAsset.InstantiateAsync();
             yield return uiLoading;
