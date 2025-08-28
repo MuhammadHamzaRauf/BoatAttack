@@ -64,7 +64,7 @@ namespace BoatAttack
 
         void SetupController(bool isHuman)
         {
-            var controllerType = isHuman ? typeof(HumanController) : typeof(AiController);
+            var controllerType = isHuman ? typeof(HumanController) : RaceManager.RaceData.game == RaceManager.GameType.Chase ? null: typeof(AiController);
             // If controller exists then make sure it's the right one, if not add it
             if (_controller)
             {
