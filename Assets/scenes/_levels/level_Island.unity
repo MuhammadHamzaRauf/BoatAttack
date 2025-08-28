@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 396945440}
   - component: {fileID: 396945439}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ai Chase Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,10 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b4a8802e1644349f90f46e168a39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableOnStart: 1
-  autoFindBoats: 1
-  player: {fileID: 0}
-  aiBoats: []
+  enableOnStart: 0
 --- !u!4 &396945440
 Transform:
   m_ObjectHideFlags: 0

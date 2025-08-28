@@ -23,15 +23,15 @@ namespace BoatAttack
         [SerializeField] private Text statusText;
         
         [Header("Auto Setup")]
-        [SerializeField] private bool setupButtonsOnStart = true;
+        [SerializeField] private bool setupButtonsOnStart = false;
         [SerializeField] private bool enableOnStart = false;
         
         // Runtime state
-        private List<BoatAIModeRouter> _aiRouters = new List<BoatAIModeRouter>();
+        private List<AIChaseController> _aiChaseControllers = new List<AIChaseController>();
         private bool _initialized = false;
         
         // Public properties
-        public int TotalAIBoats => _aiRouters.Count;
+        public int TotalAIBoats => _aiChaseControllers.Count;
         public int ChasingBoats => GetChasingBoatCount();
         public int ReturningBoats => GetReturningBoatCount();
         public int DeactivatedBoats => GetDeactivatedBoatCount();
@@ -95,19 +95,19 @@ namespace BoatAttack
         
         private void RefreshAIBoats()
         {
-            _aiRouters.Clear();
-            var routers = FindObjectsOfType<BoatAIModeRouter>();
+            _aiChaseControllers.Clear();
+            var chaseControllers = FindObjectsOfType<AIChaseController>();
             
-            foreach (var router in routers)
+            foreach (var chaseController in chaseControllers)
             {
-                // Only include routers that have both AI controllers
-                if (router.GetComponent<AiController>() != null && router.GetComponent<AIChaseController>() != null)
+                // Only include AI boats (not player boats)
+                if (chaseController.GetComponent<AiController>() == null)
                 {
-                    _aiRouters.Add(router);
+                    _aiChaseControllers.Add(chaseController);
                 }
             }
             
-            Debug.Log($"ChaseModeManager: Found {_aiRouters.Count} AI boats with routers");
+            Debug.Log($"ChaseModeManager: Found {_aiChaseControllers.Count} AI boats with chase controllers");
         }
         
         private void SetupButtons()
@@ -159,11 +159,11 @@ namespace BoatAttack
             }
             
             int chaseCount = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null)
+                if (chaseController != null)
                 {
-                    router.EnableChase(playerTransform);
+                    chaseController.StartChasing(playerTransform);
                     chaseCount++;
                 }
             }
@@ -178,11 +178,11 @@ namespace BoatAttack
         public void StopChaseAll()
         {
             int returnCount = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null)
+                if (chaseController != null)
                 {
-                    router.StopChaseAndReturnToBase();
+                    chaseController.StopChasingAndReturnToBase();
                     returnCount++;
                 }
             }
@@ -197,11 +197,11 @@ namespace BoatAttack
         public void DeactivateAll()
         {
             int deactivateCount = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null)
+                if (chaseController != null)
                 {
-                    router.Deactivate();
+                    chaseController.Deactivate();
                     deactivateCount++;
                 }
             }
@@ -216,16 +216,17 @@ namespace BoatAttack
         public void EnableLegacyAll()
         {
             int legacyCount = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null)
+                if (chaseController != null)
                 {
-                    router.EnableLegacy();
+                    // For chase mode, we don't enable legacy racing
+                    // Boats will return to base when chase is stopped
                     legacyCount++;
                 }
             }
             
-            Debug.Log($"ChaseModeManager: Enabled legacy mode for {legacyCount} AI boats");
+            Debug.Log($"ChaseModeManager: {legacyCount} AI boats are in chase mode (legacy racing not available)");
         }
         
         /// <summary>
@@ -252,9 +253,9 @@ namespace BoatAttack
         private int GetChasingBoatCount()
         {
             int count = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null && router.CurrentMode == BoatAIModeRouter.AIMode.Chase)
+                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Chasing)
                     count++;
             }
             return count;
@@ -263,9 +264,9 @@ namespace BoatAttack
         private int GetReturningBoatCount()
         {
             int count = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null && router.CurrentMode == BoatAIModeRouter.AIMode.Returning)
+                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Returning)
                     count++;
             }
             return count;
@@ -274,9 +275,9 @@ namespace BoatAttack
         private int GetDeactivatedBoatCount()
         {
             int count = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null && router.CurrentMode == BoatAIModeRouter.AIMode.Deactivated)
+                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Deactivated)
                     count++;
             }
             return count;
@@ -285,9 +286,9 @@ namespace BoatAttack
         private int GetLegacyBoatCount()
         {
             int count = 0;
-            foreach (var router in _aiRouters)
+            foreach (var chaseController in _aiChaseControllers)
             {
-                if (router != null && router.CurrentMode == BoatAIModeRouter.AIMode.Legacy)
+                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Idle)
                     count++;
             }
             return count;

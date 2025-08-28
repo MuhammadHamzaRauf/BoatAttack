@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 1
+  m_CurrentQuality: 0
   m_QualitySettings:
   - serializedVersion: 3
     name: Low
@@ -112,7 +112,6 @@ QualitySettings:
     - WebGL
     - PS4
     - XboxOne
-    - Android
   - serializedVersion: 3
     name: High
     pixelLightCount: 4
@@ -163,9 +162,10 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - iPhone
     - WebGL
     - Nintendo Switch
+    - Android
+    - iPhone
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
     : 0

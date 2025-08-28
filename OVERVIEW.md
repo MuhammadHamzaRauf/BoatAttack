@@ -31,21 +31,19 @@ Boat Attack is a Unity URP demo showcasing high-quality water rendering, boat ph
 - **AI Follow Mode**: Boats can follow the player with smooth behavior
 
 ### 🧭 **Chase Mode (Additive)**
-- **Single-Authority AI System**: Prevents overlap between legacy racing AI and chase AI
+- **Simplified AI System**: Uses AIChaseController directly without router complexity
 - **Components**:
-  - `BoatAIModeRouter` (per boat): Ensures only ONE AI controller drives the boat per frame
-  - `AIChaseController` (per boat): Chase behavior with standoff distance and return-to-base
+  - `AIChaseController` (per boat): Chase behavior with NavMesh navigation and standoff distance
   - `ChaseModeManager` (optional): Scene-level control for all AI boats
-- **AI Modes**: Legacy (racing), Chase (pursuing player), Returning (to base), Deactivated (idle)
-- **Public API** (`BoatAIModeRouter`):
-  - `EnableChase(Transform player)`
-  - `StopChaseAndReturnToBase()`
+- **AI States**: Idle, Chasing (pursuing player), Returning (to base), Deactivated (idle)
+- **Public API** (`AIChaseController`):
+  - `StartChasing(Transform player)`
+  - `StopChasingAndReturnToBase()`
   - `Deactivate()`
-  - `EnableLegacy()`
   - `SetBase(Transform baseHome)`
 - **Tunables**: Configurable chase distance, speed, responsiveness, and return tolerance
-- **Events**: Mode changes, arrival at base, inside minimum distance
-- **Gizmos**: Mode indicators, base positions, and chase distance rings
+- **Events**: Inside minimum distance, arrival at base
+- **Gizmos**: NavMesh paths, base positions, and chase distance rings
 - **Setup Guide**: See [MANUAL_WIRING.md](MANUAL_WIRING.md) for detailed installation
 
 ### 📱 **Mobile Support**
@@ -249,8 +247,7 @@ AppSettings (Manager) → RaceManager → WaypointGroup → Boat System
 - **HumanController**: Player input handling
 - **AiController**: Waypoint following AI
 - **AIFollowInput**: Player-following AI behavior
-- **BoatAIModeRouter**: Single-authority AI control routing
-- **AIChaseController**: Chase behavior with return-to-base logic
+- **AIChaseController**: Chase behavior with NavMesh navigation and return-to-base logic
 
 ## Troubleshooting
 
@@ -297,8 +294,8 @@ AppSettings (Manager) → RaceManager → WaypointGroup → Boat System
 4. Include visual debugging if needed
 
 ### **Chase Mode Integration**
-1. Add `BoatAIModeRouter` to AI boats for single-authority control
-2. Configure `AIChaseController` parameters for desired chase behavior
+1. Add `AIChaseController` to AI boats for chase behavior
+2. Configure chase parameters for desired behavior
 3. Use `ChaseModeManager` for scene-level control
 4. Follow [MANUAL_WIRING.md](MANUAL_WIRING.md) for detailed setup
 

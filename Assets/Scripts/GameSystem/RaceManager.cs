@@ -387,7 +387,7 @@ namespace BoatAttack
         #region Chase Mode API
         
         /// <summary>
-        /// Sets up AI boats for chase mode by adding AIChaseController and BoatAIModeRouter components
+        /// Sets up AI boats for chase mode by adding AIChaseController components
         /// </summary>
         private static void SetupChaseMode()
         {
@@ -425,22 +425,15 @@ namespace BoatAttack
                     chaseController = boat.gameObject.AddComponent<AIChaseController>();
                 }
                 
-                // Add BoatAIModeRouter if not already present
-                var router = boat.GetComponent<BoatAIModeRouter>();
-                if (router == null)
-                {
-                    router = boat.gameObject.AddComponent<BoatAIModeRouter>();
-                }
-                
-                // Set the player as target and start chasing via the router
-                router.EnableChase(playerTransform);
+                // Set the player as target and start chasing directly
+                chaseController.StartChasing(playerTransform);
             }
             
             Debug.Log($"Chase Mode: Setup complete. {RaceData.boats.Count - 1} AI boats are now chasing the player.");
         }
         
         /// <summary>
-        /// Start chase mode for all AI boats using the router system
+        /// Start chase mode for all AI boats
         /// </summary>
         public static void StartChaseMode()
         {
@@ -468,10 +461,10 @@ namespace BoatAttack
                 var boatData = RaceData.boats[i];
                 if (boatData.human || boatData.Boat == null) continue;
                 
-                var router = boatData.Boat.GetComponent<BoatAIModeRouter>();
-                if (router != null)
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
                 {
-                    router.EnableChase(playerTransform);
+                    chaseController.StartChasing(playerTransform);
                     chaseCount++;
                 }
             }
@@ -480,7 +473,7 @@ namespace BoatAttack
         }
         
         /// <summary>
-        /// Stop chase mode and make AI boats return to base using the router system
+        /// Stop chase mode and make AI boats return to base
         /// </summary>
         public static void StopChaseMode()
         {
@@ -492,10 +485,10 @@ namespace BoatAttack
                 var boatData = RaceData.boats[i];
                 if (boatData.human || boatData.Boat == null) continue;
                 
-                var router = boatData.Boat.GetComponent<BoatAIModeRouter>();
-                if (router != null)
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
                 {
-                    router.StopChaseAndReturnToBase();
+                    chaseController.StopChasingAndReturnToBase();
                     returnCount++;
                 }
             }
@@ -504,7 +497,7 @@ namespace BoatAttack
         }
         
         /// <summary>
-        /// Deactivate all AI boats (stop all behaviors) using the router system
+        /// Deactivate all AI boats (stop all behaviors)
         /// </summary>
         public static void DeactivateChaseMode()
         {
@@ -516,10 +509,10 @@ namespace BoatAttack
                 var boatData = RaceData.boats[i];
                 if (boatData.human || boatData.Boat == null) continue;
                 
-                var router = boatData.Boat.GetComponent<BoatAIModeRouter>();
-                if (router != null)
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null)
                 {
-                    router.Deactivate();
+                    chaseController.Deactivate();
                     deactivateCount++;
                 }
             }
@@ -528,7 +521,7 @@ namespace BoatAttack
         }
         
         /// <summary>
-        /// Get the number of AI boats currently in chase mode using the router system
+        /// Get the number of AI boats currently in chase mode
         /// </summary>
         public static int GetChaseModeBoatCount()
         {
@@ -540,8 +533,8 @@ namespace BoatAttack
                 var boatData = RaceData.boats[i];
                 if (!boatData.human && boatData.Boat == null) continue;
                 
-                var router = boatData.Boat.GetComponent<BoatAIModeRouter>();
-                if (router != null && router.CurrentMode == BoatAIModeRouter.AIMode.Chase)
+                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
+                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Chasing)
                 {
                     count++;
                 }
