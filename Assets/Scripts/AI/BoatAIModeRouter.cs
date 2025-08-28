@@ -9,7 +9,6 @@ namespace BoatAttack.AI
     /// Prevents overlap between legacy AI (AiController) and chase AI (AIChaseController).
     /// </summary>
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Engine))]
     public class BoatAIModeRouter : MonoBehaviour
     {
         public enum AIMode
@@ -46,10 +45,16 @@ namespace BoatAttack.AI
         
         private void Awake()
         {
+            // Find Engine component (could be on this GameObject or in children)
             _engine = GetComponent<Engine>();
             if (_engine == null)
             {
-                Debug.LogError("BoatAIModeRouter: No Engine component found!");
+                _engine = GetComponentInChildren<Engine>();
+            }
+            
+            if (_engine == null)
+            {
+                Debug.LogError("BoatAIModeRouter: No Engine component found on this GameObject or in children!");
                 enabled = false;
                 return;
             }
@@ -229,6 +234,18 @@ namespace BoatAttack.AI
             if (legacyAI == null && chaseAI == null)
             {
                 Debug.LogWarning("BoatAIModeRouter: No AI controllers assigned! Add either AiController or AIChaseController.");
+            }
+            
+            // Check if Engine component exists (on this GameObject or in children)
+            var engine = GetComponent<Engine>();
+            if (engine == null)
+            {
+                engine = GetComponentInChildren<Engine>();
+            }
+            
+            if (engine == null)
+            {
+                Debug.LogWarning("BoatAIModeRouter: No Engine component found! Make sure Engine is on this GameObject or in children.");
             }
         }
         
