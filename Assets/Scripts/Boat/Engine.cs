@@ -30,10 +30,10 @@ namespace BoatAttack
 
         private void Awake()
         {
-			if(engineSound)
+			if(engineSound && engineSound.clip)
 				engineSound.time = UnityEngine.Random.Range(0f, engineSound.clip.length); // randomly start the engine sound
 
-			if(waterSound)
+			if(waterSound && waterSound.clip)
 				waterSound.time = UnityEngine.Random.Range(0f, waterSound.clip.length); // randomly start the water sound
 
             _guid = GetInstanceID(); // Get the engines GUID for the buoyancy system
@@ -43,7 +43,10 @@ namespace BoatAttack
         private void FixedUpdate()
         {
             VelocityMag = RB.velocity.sqrMagnitude; // get the sqr mag
-            engineSound.pitch = Mathf.Max(VelocityMag * 0.01f, 0.3f); // use some magice numbers to control the pitch of the engine sound
+            
+            // Update engine sound pitch if available
+            if (engineSound != null)
+                engineSound.pitch = Mathf.Max(VelocityMag * 0.01f, 0.3f);
 
             // Get the water level from the engines position and store it
             _point[0] = transform.TransformPoint(enginePosition);

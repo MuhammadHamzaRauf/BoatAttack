@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoatAttack.AI
 {
@@ -55,6 +56,10 @@ namespace BoatAttack.AI
         [Header("Events (Optional)")]
         public Action onInsideMinDistance;
         public Action onArrivedAtBase;
+        
+        // UnityEvent versions for inspector assignment
+        [SerializeField] private UnityEvent onInsideMinDistanceEvent;
+        [SerializeField] private UnityEvent onArrivedAtBaseEvent;
 
         [Header("Debug")]
         [SerializeField] private bool showGizmos = true;
@@ -186,8 +191,8 @@ namespace BoatAttack.AI
             if (dist < chaseMinDistance)
             {
                 desiredSpeedLocal = 0f; // hold position
-                if (onInsideMinDistance != null)
-                    onInsideMinDistance.Invoke();
+                onInsideMinDistance?.Invoke();
+                onInsideMinDistanceEvent?.Invoke();
             }
 
             float forwardSpeed = Vector3.Dot(_rb.velocity, transform.forward);
@@ -216,8 +221,8 @@ namespace BoatAttack.AI
                 State = ChaseState.Idle;
                 _throttle = 0f;
                 _steer = 0f;
-                if (onArrivedAtBase != null)
-                    onArrivedAtBase.Invoke();
+                onArrivedAtBase?.Invoke();
+                onArrivedAtBaseEvent?.Invoke();
                 return;
             }
 

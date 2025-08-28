@@ -31,17 +31,22 @@ Boat Attack is a Unity URP demo showcasing high-quality water rendering, boat ph
 - **AI Follow Mode**: Boats can follow the player with smooth behavior
 
 ### 🧭 **Chase Mode (Additive)**
-- Add-on AI behavior for non-player boats to pursue the player while maintaining spacing.
-- Components:
-  - `AIChaseController` (per boat): minimal brain that drives the existing `Engine` with steer/throttle.
-  - `AIChaseManager` (optional): scene helper to toggle chase across multiple boats.
-- Public API (`AIChaseController`):
-  - `StartChasing(Transform player)`
-  - `StopChasingAndReturnToBase()`
+- **Single-Authority AI System**: Prevents overlap between legacy racing AI and chase AI
+- **Components**:
+  - `BoatAIModeRouter` (per boat): Ensures only ONE AI controller drives the boat per frame
+  - `AIChaseController` (per boat): Chase behavior with standoff distance and return-to-base
+  - `ChaseModeManager` (optional): Scene-level control for all AI boats
+- **AI Modes**: Legacy (racing), Chase (pursuing player), Returning (to base), Deactivated (idle)
+- **Public API** (`BoatAIModeRouter`):
+  - `EnableChase(Transform player)`
+  - `StopChaseAndReturnToBase()`
   - `Deactivate()`
-- Tunables (serialized): `player`, `chaseMinDistance`, `desiredSpeed`, `steerGain`, `throttleGain`, `throttleSlewRate`, `steerSlewRate`, `returnTolerance`, `returnSpeed`.
-- Events: `onInsideMinDistance`, `onArrivedAtBase`.
-- Gizmos: base/home point and min-distance ring.
+  - `EnableLegacy()`
+  - `SetBase(Transform baseHome)`
+- **Tunables**: Configurable chase distance, speed, responsiveness, and return tolerance
+- **Events**: Mode changes, arrival at base, inside minimum distance
+- **Gizmos**: Mode indicators, base positions, and chase distance rings
+- **Setup Guide**: See [MANUAL_WIRING.md](MANUAL_WIRING.md) for detailed installation
 
 ### 📱 **Mobile Support**
 - **Touch Controls**: On-screen joystick and buttons for mobile devices
@@ -244,6 +249,8 @@ AppSettings (Manager) → RaceManager → WaypointGroup → Boat System
 - **HumanController**: Player input handling
 - **AiController**: Waypoint following AI
 - **AIFollowInput**: Player-following AI behavior
+- **BoatAIModeRouter**: Single-authority AI control routing
+- **AIChaseController**: Chase behavior with return-to-base logic
 
 ## Troubleshooting
 
@@ -288,6 +295,12 @@ AppSettings (Manager) → RaceManager → WaypointGroup → Boat System
 2. Implement required interface methods
 3. Add configuration parameters
 4. Include visual debugging if needed
+
+### **Chase Mode Integration**
+1. Add `BoatAIModeRouter` to AI boats for single-authority control
+2. Configure `AIChaseController` parameters for desired chase behavior
+3. Use `ChaseModeManager` for scene-level control
+4. Follow [MANUAL_WIRING.md](MANUAL_WIRING.md) for detailed setup
 
 ### **Mobile UI Customization**
 1. Modify `MobileControls.prefab` layout
