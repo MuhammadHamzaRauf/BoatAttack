@@ -433,113 +433,64 @@ namespace BoatAttack
         }
         
         /// <summary>
-        /// Start chase mode for all AI boats
+        /// Start chase mode for all AI boats using AIChaseManager
         /// </summary>
         public static void StartChaseMode()
         {
-            if (RaceData == null || RaceData.boats == null) return;
-            
-            Transform playerTransform = null;
-            for (int i = 0; i < RaceData.boats.Count; i++)
+            var chaseManager = FindObjectOfType<AIChaseManager>();
+            if (chaseManager != null && chaseManager.IsReady())
             {
-                if (RaceData.boats[i].human && RaceData.boats[i].Boat != null)
-                {
-                    playerTransform = RaceData.boats[i].Boat.transform;
-                    break;
-                }
+                chaseManager.StartChaseAll(chaseManager.GetPlayerTransform());
             }
-            
-            if (playerTransform == null)
+            else
             {
-                Debug.LogWarning("StartChaseMode: No player boat found!");
-                return;
+                Debug.LogWarning("StartChaseMode: No AIChaseManager found or not ready!");
             }
-            
-            int chaseCount = 0;
-            for (int i = 0; i < RaceData.boats.Count; i++)
-            {
-                var boatData = RaceData.boats[i];
-                if (boatData.human || boatData.Boat == null) continue;
-                
-                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
-                if (chaseController != null)
-                {
-                    chaseController.StartChasing(playerTransform);
-                    chaseCount++;
-                }
-            }
-            
-            Debug.Log($"StartChaseMode: {chaseCount} AI boats are now chasing the player.");
         }
         
         /// <summary>
-        /// Stop chase mode and make AI boats return to base
+        /// Stop chase mode and make AI boats return to base using AIChaseManager
         /// </summary>
         public static void StopChaseMode()
         {
-            if (RaceData == null || RaceData.boats == null) return;
-            
-            int returnCount = 0;
-            for (int i = 0; i < RaceData.boats.Count; i++)
+            var chaseManager = FindObjectOfType<AIChaseManager>();
+            if (chaseManager != null && chaseManager.IsReady())
             {
-                var boatData = RaceData.boats[i];
-                if (boatData.human || boatData.Boat == null) continue;
-                
-                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
-                if (chaseController != null)
-                {
-                    chaseController.StopChasingAndReturnToBase();
-                    returnCount++;
-                }
+                chaseManager.StopAndReturnAll();
             }
-            
-            Debug.Log($"StopChaseMode: {returnCount} AI boats are returning to base.");
+            else
+            {
+                Debug.LogWarning("StopChaseMode: No AIChaseManager found or not ready!");
+            }
         }
         
         /// <summary>
-        /// Deactivate all AI boats (stop all behaviors)
+        /// Deactivate all AI boats (stop all behaviors) using AIChaseManager
         /// </summary>
         public static void DeactivateChaseMode()
         {
-            if (RaceData == null || RaceData.boats == null) return;
-            
-            int deactivateCount = 0;
-            for (int i = 0; i < RaceData.boats.Count; i++)
+            var chaseManager = FindObjectOfType<AIChaseManager>();
+            if (chaseManager != null && chaseManager.IsReady())
             {
-                var boatData = RaceData.boats[i];
-                if (boatData.human || boatData.Boat == null) continue;
-                
-                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
-                if (chaseController != null)
-                {
-                    chaseController.Deactivate();
-                    deactivateCount++;
-                }
+                chaseManager.DeactivateAll();
             }
-            
-            Debug.Log($"DeactivateChaseMode: {deactivateCount} AI boats have been deactivated.");
+            else
+            {
+                Debug.LogWarning("DeactivateChaseMode: No AIChaseManager found or not ready!");
+            }
         }
         
         /// <summary>
-        /// Get the number of AI boats currently in chase mode
+        /// Get the number of AI boats currently in chase mode using AIChaseManager
         /// </summary>
         public static int GetChaseModeBoatCount()
         {
-            if (RaceData == null || RaceData.boats == null) return 0;
-            
-            int count = 0;
-            for (int i = 0; i < RaceData.boats.Count; i++)
+            var chaseManager = FindObjectOfType<AIChaseManager>();
+            if (chaseManager != null && chaseManager.IsReady())
             {
-                var boatData = RaceData.boats[i];
-                if (!boatData.human && boatData.Boat == null) continue;
-                
-                var chaseController = boatData.Boat.GetComponent<AIChaseController>();
-                if (chaseController != null && chaseController.State == AIChaseController.ChaseState.Chasing)
-                {
-                    count++;
-                }
+                return chaseManager.GetManagedBoatCount();
             }
-            return count;
+            return 0;
         }
         
         #endregion

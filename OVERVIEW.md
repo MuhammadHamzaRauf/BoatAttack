@@ -34,7 +34,7 @@ Boat Attack is a Unity URP demo showcasing high-quality water rendering, boat ph
 - **Simplified AI System**: Uses AIChaseController directly without router complexity
 - **Components**:
   - `AIChaseController` (per boat): Chase behavior with NavMesh navigation and standoff distance
-  - `ChaseModeManager` (optional): Scene-level control for all AI boats
+  - `AIChaseManager` (optional): Scene-level control for all AI boats
 - **AI States**: Idle, Chasing (pursuing player), Returning (to base), Deactivated (idle)
 - **Public API** (`AIChaseController`):
   - `StartChasing(Transform player)`
@@ -296,7 +296,7 @@ AppSettings (Manager) → RaceManager → WaypointGroup → Boat System
 ### **Chase Mode Integration**
 1. Add `AIChaseController` to AI boats for chase behavior
 2. Configure chase parameters for desired behavior
-3. Use `ChaseModeManager` for scene-level control
+3. Use `AIChaseManager` for scene-level control
 4. Follow [MANUAL_WIRING.md](MANUAL_WIRING.md) for detailed setup
 
 ### **Mobile UI Customization**
