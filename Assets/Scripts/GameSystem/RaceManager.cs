@@ -428,7 +428,6 @@ namespace BoatAttack
                 // Set the player as target and start chasing directly
                 chaseController.StartChasing(playerTransform);
             }
-            
             Debug.Log($"Chase Mode: Setup complete. {RaceData.boats.Count - 1} AI boats are now chasing the player.");
         }
         
@@ -461,22 +460,6 @@ namespace BoatAttack
             else
             {
                 Debug.LogWarning("StopChaseMode: No AIChaseManager found or not ready!");
-            }
-        }
-        
-        /// <summary>
-        /// Deactivate all AI boats (stop all behaviors) using AIChaseManager
-        /// </summary>
-        public static void DeactivateChaseMode()
-        {
-            var chaseManager = FindObjectOfType<AIChaseManager>();
-            if (chaseManager != null && chaseManager.IsReady())
-            {
-                chaseManager.DeactivateAll();
-            }
-            else
-            {
-                Debug.LogWarning("DeactivateChaseMode: No AIChaseManager found or not ready!");
             }
         }
         

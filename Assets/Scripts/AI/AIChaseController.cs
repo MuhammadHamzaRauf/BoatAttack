@@ -32,9 +32,9 @@ namespace BoatAttack.AI
 
         [Header("Chase Tuning")]
         [Tooltip("Desired forward speed while chasing, in m/s (approx).")]
-        [SerializeField] private float desiredSpeed = 12f;
+        [SerializeField] private float desiredSpeed = 8f;
         [Tooltip("Minimum distance to the player before slowing/holding.")]
-        [SerializeField] private float chaseMinDistance = 12f;
+        [SerializeField] private float chaseMinDistance = 20f;
         [Tooltip("Steering proportional gain.")]
         [SerializeField] private float steerGain = 1.0f;
         [Tooltip("Throttle proportional gain.")]
@@ -141,13 +141,6 @@ namespace BoatAttack.AI
         public void StopChasingAndReturnToBase()
         {
             State = ChaseState.Returning;
-        }
-
-        public void Deactivate()
-        {
-            State = ChaseState.Deactivated;
-            _throttle = 0f;
-            _steer = 0f;
         }
 
         public void SetBase(Transform newBase)

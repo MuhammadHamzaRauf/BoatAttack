@@ -60,11 +60,11 @@ namespace BoatAttack.AI
             
             Debug.Log($"AIChaseManager: Found {_aiBoats.Count} AI boats and player: {(_player != null ? _player.name : "None")}");
             
-            // Start chase mode if enabled
-            if (enableOnStart && _player != null && _aiBoats.Count > 0)
-            {
-                StartChaseAll(_player);
-            }
+            // // Start chase mode if enabled
+            // if (enableOnStart && _player != null && _aiBoats.Count > 0)
+            // {
+            //     StartChaseAll(_player);
+            // }
         }
 
         public void StartChaseAll(Transform target)
@@ -105,21 +105,6 @@ namespace BoatAttack.AI
             }
             
             Debug.Log($"AIChaseManager: Stopped chase mode for {_aiBoats.Count} AI boats");
-        }
-
-        public void DeactivateAll()
-        {
-            if (_aiBoats.Count == 0) return;
-            
-            foreach (var ai in _aiBoats)
-            {
-                if (ai != null)
-                {
-                    ai.Deactivate();
-                }
-            }
-            
-            Debug.Log($"AIChaseManager: Deactivated {_aiBoats.Count} AI boats");
         }
         
         /// <summary>
