@@ -13,7 +13,6 @@ namespace BoatAttack
         [SerializeField] private Button startChaseButton;
         [SerializeField] private Button stopChaseButton;
         [SerializeField] private Button deactivateButton;
-        [SerializeField] private Text chaseStatusText;
         
         [Header("Auto Setup")]
         [SerializeField] private bool setupButtonsOnStart = true;
@@ -38,15 +37,6 @@ namespace BoatAttack
                 deactivateButton.onClick.AddListener(DeactivateChaseMode);
         }
         
-        private void Update()
-        {
-            if (chaseStatusText != null)
-            {
-                int chaseCount = RaceManager.GetChaseModeBoatCount();
-                chaseStatusText.text = $"Chase Mode: {chaseCount} boats chasing";
-            }
-        }
-        
         // Public API - can be called from anywhere
         [ContextMenu("Start Chase Mode")]
         public void StartChaseMode()
@@ -64,7 +54,7 @@ namespace BoatAttack
         public void DeactivateChaseMode()
         {
             RaceManager.DeactivateChaseMode();
-        }
+        } 
         
         // Static utility methods for easy access
         public static void StartChase() => RaceManager.StartChaseMode();

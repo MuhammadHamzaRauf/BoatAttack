@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 namespace BoatAttack.AI
 {
@@ -82,6 +83,20 @@ namespace BoatAttack.AI
 
         private static readonly Vector3 Vector3Zero = Vector3.zero;
 
+        // NavMesh navigation (mirrors AiController)
+        private NavMeshPath _navPath; // navigation path (reused)
+        private Vector3[] _pathCorners = System.Array.Empty<Vector3>();
+        private int _currentCornerIndex;
+        private bool _hasValidPath;
+        private float _recalcTimer;
+        
+        // Smooth movement state (like AiController)
+        private float _targetSide; // side of destination, positive on right side, negative on left side
+
+        [Header("NavMesh Settings")]
+        [SerializeField] private float pathRecalcInterval = 0.5f;
+        [SerializeField] private float cornerArrivalDistance = 6f;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
@@ -107,6 +122,9 @@ namespace BoatAttack.AI
             {
                 _lastPlayerPos = player.position;
             }
+
+            // Initialize nav path once to avoid allocations each recalc
+            _navPath = new NavMeshPath();
         }
 
         // Public API ---------------------------------------------------------
@@ -178,28 +196,44 @@ namespace BoatAttack.AI
             float lookAheadTime = 0.5f;
             var predicted = currentPlayerPos + _playerVelocity * lookAheadTime;
 
-            // Vector from us to predicted target
-            var toTarget = predicted - transform.position;
-            float dist = toTarget.magnitude;
-
-            // Local-space steering (x is left/right)
-            var local = transform.InverseTransformDirection(toTarget);
-            float desiredSteer = Mathf.Clamp(local.x * steerGain, -maxSteer, maxSteer);
-
-            // Throttle control with standoff enforcement
-            float desiredSpeedLocal = desiredSpeed;
+            // Enforce standoff distance
+            var toPredicted = predicted - transform.position;
+            float dist = toPredicted.magnitude;
             if (dist < chaseMinDistance)
             {
-                desiredSpeedLocal = 0f; // hold position
                 onInsideMinDistance?.Invoke();
                 onInsideMinDistanceEvent?.Invoke();
+                TargetZeroInputs(2.0f, 2.0f);
+                return;
             }
 
-            float forwardSpeed = Vector3.Dot(_rb.velocity, transform.forward);
-            float speedError = desiredSpeedLocal - forwardSpeed;
-            float desiredThrottle = Mathf.Clamp(speedError * throttleGain, -maxThrottle, maxThrottle);
+            // Recalculate path at interval
+            _recalcTimer += Time.deltaTime;
+            if (_recalcTimer >= pathRecalcInterval || !_hasValidPath)
+            {
+                _recalcTimer = 0f;
+                CalculatePath(predicted, out _hasValidPath);
+            }
 
-            // Optional smoothing to avoid oscillations
+            // Advance along path
+            AdvanceCornerIfReached();
+
+            // Steer and throttle toward current corner (like AiController)
+            var corner = GetCurrentCornerOr(predicted);
+            var toCorner = corner - transform.position;
+            
+            // Get angle to destination and side (mirrors AiController logic)
+            var normDir = toCorner.normalized;
+            var dot = Vector3.Dot(normDir, transform.forward);
+            _targetSide = Vector3.Cross(transform.forward, normDir).y; // positive on right side, negative on left side
+
+            // Smooth steering like AiController
+            float desiredSteer = Mathf.Clamp(_targetSide, -maxSteer, maxSteer);
+            
+            // Smooth throttle like AiController
+            float desiredThrottle = dot > 0 ? 1f : 0.25f; // Full throttle when facing target, reduced when turning
+            
+            // Apply smoothing if enabled
             if (throttleSlewRate > 0f)
                 _throttle = Mathf.MoveTowards(_throttle, desiredThrottle, throttleSlewRate * Time.deltaTime);
             else
@@ -226,14 +260,31 @@ namespace BoatAttack.AI
                 return;
             }
 
-            // Local-space steering towards base
-            var local = transform.InverseTransformDirection(toBase);
-            float desiredSteer = Mathf.Clamp(local.x * steerGain, -maxSteer, maxSteer);
+            // Recalculate path at interval
+            _recalcTimer += Time.deltaTime;
+            if (_recalcTimer >= pathRecalcInterval || !_hasValidPath)
+            {
+                _recalcTimer = 0f;
+                CalculatePath(target, out _hasValidPath);
+            }
 
-            // Aim for return speed
-            float forwardSpeed = Vector3.Dot(_rb.velocity, transform.forward);
-            float speedError = returnSpeed - forwardSpeed;
-            float desiredThrottle = Mathf.Clamp(speedError * throttleGain, -maxThrottle, maxThrottle);
+            // Advance along path
+            AdvanceCornerIfReached();
+
+            // Steer and throttle toward current corner (like AiController)
+            var corner = GetCurrentCornerOr(target);
+            var toCorner = corner - transform.position;
+            
+            // Get angle to destination and side (mirrors AiController logic)
+            var normDir = toCorner.normalized;
+            var dot = Vector3.Dot(normDir, transform.forward);
+            _targetSide = Vector3.Cross(transform.forward, normDir).y; // positive on right side, negative on left side
+
+            // Smooth steering like AiController
+            float desiredSteer = Mathf.Clamp(_targetSide, -maxSteer, maxSteer);
+            
+            // Smooth throttle like AiController
+            float desiredThrottle = dot > 0 ? 0.8f : 0.2f; // Reduced throttle for return journey
 
             if (throttleSlewRate > 0f)
                 _throttle = Mathf.MoveTowards(_throttle, desiredThrottle, throttleSlewRate * Time.deltaTime);
@@ -265,6 +316,72 @@ namespace BoatAttack.AI
 
             _engine.Accelerate(_throttle);
             _engine.Turn(_steer);
+        }
+
+        // NavMesh helpers ----------------------------------------------------
+        private void CalculatePath(Vector3 destination, out bool hasPath)
+        {
+            hasPath = false;
+            if (_navPath == null)
+            {
+                _navPath = new NavMeshPath();
+            }
+            NavMesh.CalculatePath(transform.position, destination, 255, _navPath);
+            if (_navPath.status == NavMeshPathStatus.PathComplete)
+            {
+                _pathCorners = _navPath.corners;
+                _currentCornerIndex = _pathCorners.Length > 1 ? 1 : 0; // skip origin
+                hasPath = true;
+            }
+            else
+            {
+                _pathCorners = System.Array.Empty<Vector3>();
+                _currentCornerIndex = 0;
+                hasPath = false;
+            }
+        }
+
+        private void AdvanceCornerIfReached()
+        {
+            if (_pathCorners == null || _pathCorners.Length == 0) return;
+            if (_currentCornerIndex >= _pathCorners.Length) return;
+
+            var corner = _pathCorners[_currentCornerIndex];
+            if (Vector3.Distance(transform.position, corner) < cornerArrivalDistance)
+            {
+                _currentCornerIndex++;
+                if (_currentCornerIndex >= _pathCorners.Length)
+                {
+                    _currentCornerIndex = _pathCorners.Length - 1;
+                }
+            }
+        }
+        
+        // Add debug gizmos like AiController
+        private void OnDrawGizmos()
+        {
+            if (!showGizmos || _pathCorners == null || _pathCorners.Length < 2) return;
+            
+            var c = Color.yellow;
+            c.a = 0.5f;
+            Gizmos.color = c;
+
+            for (var i = 0; i < _pathCorners.Length - 1; i++)
+            {
+                if (i == _pathCorners.Length - 1)
+                    Gizmos.DrawLine(_pathCorners[_pathCorners.Length - 1], _pathCorners[i]);
+                else
+                    Gizmos.DrawLine(_pathCorners[i], _pathCorners[i + 1]);
+            }
+        }
+
+        private Vector3 GetCurrentCornerOr(Vector3 fallback)
+        {
+            if (_pathCorners != null && _pathCorners.Length > 0 && _currentCornerIndex < _pathCorners.Length)
+            {
+                return _pathCorners[_currentCornerIndex];
+            }
+            return fallback;
         }
 
 #if UNITY_EDITOR

@@ -551,6 +551,20 @@ namespace BoatAttack
         
         #endregion
         
+        #region Single Player Mode
+        
+        
+        /// <summary>
+        /// Start single player mode with normal racing
+        /// </summary>
+        public static void StartSinglePlayerRaceMode()
+        {
+            SetGameType(GameType.Singleplayer);
+            LoadGame();
+        }
+        
+        #endregion
+        
 
         
         #endregion

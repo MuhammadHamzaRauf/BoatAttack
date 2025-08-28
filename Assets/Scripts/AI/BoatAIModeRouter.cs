@@ -45,8 +45,6 @@ namespace BoatAttack.AI
         
         private void Awake()
         {
-            // Find Engine component (could be on this GameObject or in children)
-            _engine = GetComponent<Engine>();
             if (_engine == null)
             {
                 _engine = GetComponentInChildren<Engine>();
