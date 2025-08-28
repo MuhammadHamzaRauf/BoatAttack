@@ -71,6 +71,21 @@ namespace BoatAttack.AI
             if (chaseAI == null)
                 chaseAI = GetComponent<AIChaseController>();
             
+            // Validate that we have the required components
+            if (legacyAI == null)
+            {
+                Debug.LogError($"BoatAIModeRouter [{gameObject.name}]: No AiController found! Add one to enable legacy racing mode.");
+                enabled = false;
+                return;
+            }
+            
+            if (chaseAI == null)
+            {
+                Debug.LogError($"BoatAIModeRouter [{gameObject.name}]: No AIChaseController found! Add one to enable chase mode.");
+                enabled = false;
+                return;
+            }
+            
             // Setup base position
             if (baseHome == null && useSpawnPositionAsBase)
             {
@@ -82,10 +97,7 @@ namespace BoatAttack.AI
             }
             
             // Subscribe to chase AI events
-            if (chaseAI != null)
-            {
-                chaseAI.onArrivedAtBase += OnChaseAIArrivedAtBase;
-            }
+            chaseAI.onArrivedAtBase += OnChaseAIArrivedAtBase;
             
             // Initialize in Legacy mode (preserves existing behavior)
             SetMode(AIMode.Legacy, false);
@@ -193,24 +205,27 @@ namespace BoatAttack.AI
         
         private void UpdateControllerStates()
         {
+            // Validate that we have the required components
+            if (legacyAI == null || chaseAI == null)
+            {
+                Debug.LogError($"BoatAIModeRouter [{gameObject.name}]: Missing required AI controllers! Cannot update states.");
+                return;
+            }
+            
             // Disable both controllers first
-            if (legacyAI != null)
-                legacyAI.enabled = false;
-            if (chaseAI != null)
-                chaseAI.enabled = false;
+            legacyAI.enabled = false;
+            chaseAI.enabled = false;
             
             // Enable only the active one
             switch (CurrentMode)
             {
                 case AIMode.Legacy:
-                    if (legacyAI != null)
-                        legacyAI.enabled = true;
+                    legacyAI.enabled = true;
                     break;
                     
                 case AIMode.Chase:
                 case AIMode.Returning:
-                    if (chaseAI != null)
-                        chaseAI.enabled = true;
+                    chaseAI.enabled = true;
                     break;
                     
                 case AIMode.Deactivated:
@@ -294,6 +309,7 @@ namespace BoatAttack.AI
             if (activeControllers > 1)
             {
                 Debug.LogError($"BoatAIModeRouter [{gameObject.name}]: Multiple AI controllers active! This should not happen.");
+                Debug.LogError($"BoatAIModeRouter [{gameObject.name}]: Legacy AI enabled: {legacyAI?.enabled}, Chase AI enabled: {chaseAI?.enabled}");
                 UpdateControllerStates(); // Force fix
             }
         }

@@ -85,7 +85,7 @@ namespace BoatAttack.AI
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-            _engine = GetComponent<Engine>();
+            _engine = GetComponentInChildren<Engine>();
             if (_engine == null)
             {
                 Debug.LogWarning("AIChaseController: No Engine found on boat. Component will not drive movement.");
