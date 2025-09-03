@@ -19,31 +19,31 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 3DSkybox
   - WaterFX
   - Terrain
   - Boat
   - Player1
-  - Player2
-  - Player3
-  - Player4
+  - CompanionAI
+  - Triggers
+  - StopMove
   - Otherthing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - RCC
+  - HeadTrack
+  - BodyPart
+  - BlockAIRayCast
+  - Pushable
+  - CoverPoint
+  - RCC_WheelCollider
+  - RCC_DetachablePart
+  - RCC_Trailer
+  - RCC_Crasher
+  - Road
+  - Traffic
+  - Buildings
+  - PostProcess
   - Blocker
   m_SortingLayers:
   - name: Default
