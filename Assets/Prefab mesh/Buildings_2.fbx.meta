@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 69686eb2a10dd9a4d8c6d118fdadc6c1
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: c018bb7de29ce0b488ad570d2f9f6e3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BS_Crane
+    second: {fileID: 2100000, guid: e3b07712f9a4a60459a879a5d73d13a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BS_Crane_02
+    second: {fileID: 2100000, guid: 816a8010daa50074db2e99b1c3247c88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BS_containers
+    second: {fileID: 2100000, guid: 240be1f683bfc244287910263def5264, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DR_Airport_Buildings_01_Mat
+    second: {fileID: 2100000, guid: b6b17352d1e27f941bc4b636b88d7aa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FS_Atlas_03
+    second: {fileID: 2100000, guid: c4b2b4bfbcbc52b49b739f8533da24ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FS_Atlas_04
+    second: {fileID: 2100000, guid: e692b58dd96409949b68c879868335af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FS_Atlas_05_0
+    second: {fileID: 2100000, guid: af20a46e0f721344b955abae36f6bcc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LA_Windows
+    second: {fileID: 2100000, guid: 177b56d38e6ae3d4cabb2bbbd8c9d615, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIAMI_Skyscrapers
+    second: {fileID: 2100000, guid: fc2de199c44eba148a3504a9c4cbc9f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #13
+    second: {fileID: 2100000, guid: 848729933537b794abe3d9799c727035, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Studio_DIFF
+    second: {fileID: 2100000, guid: 8128f85f95ad22d44b9b376d9a2738c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Bridges
+    second: {fileID: 2100000, guid: 7939cb10186008f4f8dde9d67d70bcf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Buildings_Windows_02_Mat
+    second: {fileID: 2100000, guid: 2134b385a2a6816498a4189ab0cd8a37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Bush_02_Mat
+    second: {fileID: 2100000, guid: ab53eeaf4d69bae428ba926a70e6d4b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Bush_Atlas
+    second: {fileID: 2100000, guid: db9eb60c2a54ebf4c82f8a8221bf28ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Concrete_Fence
+    second: {fileID: 2100000, guid: 14e897ff2382e154c87247bcce2d9ce2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Dead_Leafs_Mat
+    second: {fileID: 2100000, guid: afa5bf01cbe521f4db11d2f88ef8ce0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_Building_01_Mat
+    second: {fileID: 2100000, guid: d3f4a83b3e8ad834c9abfa9e1bb586f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_Building_02_Mat
+    second: {fileID: 2100000, guid: c630d99766906384ab4d345573f3c839, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_Building_03_Mat
+    second: {fileID: 2100000, guid: 585f28d901e8d954cb3cde7218712552, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_Building_04_Mat
+    second: {fileID: 2100000, guid: 2eb79ffe708c03a41b22edd991866c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_Buildings_Base_MAT
+    second: {fileID: 2100000, guid: c05bcfdd12f0c69468b9d71770e0e6f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_House1
+    second: {fileID: 2100000, guid: ead76b55ab84f1e438cdf57dc55f46cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_House2
+    second: {fileID: 2100000, guid: 88ebfdd5c5cab364d8309ebf12a2e18c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_House3
+    second: {fileID: 2100000, guid: d0ebf3e65d3b5c5498a1e7b369dac319, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_LA_River_Elements_MAT
+    second: {fileID: 2100000, guid: 35b00e6611ee9ee4395821ba5e0d6e03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_02_03_LA_MAT
+    second: {fileID: 2100000, guid: e9a5a52c81a3f5f41ab4854d38f02269, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_04_05_LA_MAT
+    second: {fileID: 2100000, guid: a3d011a51b732ba4384a2c15e6eaef17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_06_07_LA_MAT
+    second: {fileID: 2100000, guid: 4f0220fa53caa34479a922c4dee6993c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_09_MAT_Clean
+    second: {fileID: 2100000, guid: c5eae76b11b9a2a4193b624ca52ee6b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_09_MAT_Grafitti
+    second: {fileID: 2100000, guid: 4fce8ff551789994681c56863738d376, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_10_MAT_Clean
+    second: {fileID: 2100000, guid: 8172f8305d33c3f45b04d8e01add85bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_10_MAT_Grafitti
+    second: {fileID: 2100000, guid: d2dd76e7b25a2ae4d989a94e12697ba9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_11_MAT_Clean
+    second: {fileID: 2100000, guid: 96ca60027c23e6c4dbc05586d13b4611, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_11_MAT_Grafitti
+    second: {fileID: 2100000, guid: c18c5cf68b9909049935798dc9374b72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_12_LA_MAT
+    second: {fileID: 2100000, guid: 5402224a089d11c43af5a4d4831ab2ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_12_MATB
+    second: {fileID: 2100000, guid: 9ac546e4192fffd4b9e26a8608cf752e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_13
+    second: {fileID: 2100000, guid: d01686f45d61bf4479e0f58a34b23e90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_13_B_MAT
+    second: {fileID: 2100000, guid: b27f3ed58ffcdfc4e87c2d0867b77af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_14_MAT
+    second: {fileID: 2100000, guid: 0a9e7cd93c5ecbc4f99b2d5bfe17be99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_MB_15_MAT
+    second: {fileID: 2100000, guid: 19af88ef15f9c534da107795a7c966a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Miami_Windows_02
+    second: {fileID: 2100000, guid: adea9bbf7616c8b47b930a7f16f16c20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Buillding_04
+    second: {fileID: 2100000, guid: 8da999b4e5b5da0469b7929b3d905331, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Buillding_04B
+    second: {fileID: 2100000, guid: 0e7ea21959ef3c64b905efba6bd6390f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Skyscraper_01_Mat
+    second: {fileID: 2100000, guid: ba23ef8eae8870c49b1df6e067aadadf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Skyscraper_02_Mat
+    second: {fileID: 2100000, guid: aa155231613907240ae329076354d163, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Skyscraper_02_Mat_Windows
+    second: {fileID: 2100000, guid: 4075e32a8d66b4f41a925319e15f1e19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_NYC_Skyscraper_03_Mat
+    second: {fileID: 2100000, guid: 7da567e450fb5924a9c6b2af41cb06af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Palms_01_Mat
+    second: {fileID: 2100000, guid: 5cba8bee95b962241ad920db4851715c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Palms_02_Mat
+    second: {fileID: 2100000, guid: 360508550f0f2114b9ae8bdd0b1584a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Props1
+    second: {fileID: 2100000, guid: 1a564c19bc2a013458afa552bed03ba1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Props1_Transparent_C
+    second: {fileID: 2100000, guid: f438c464f9ace974381c37afc37ecedd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Rocks_01_MAT
+    second: {fileID: 2100000, guid: 9ac927571eb302a44ba2749bf37e9390, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Rocks_02_MAT
+    second: {fileID: 2100000, guid: 8c15661dfde7f394eb28adbf0af86d8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Rocks_03_MAT
+    second: {fileID: 2100000, guid: 76a14081b07b2484b8b3dde6932cb436, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Rocks_04_MAT
+    second: {fileID: 2100000, guid: 869f62a305ec7d4449f7fe2227a6baa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Tree_01_Mat
+    second: {fileID: 2100000, guid: 5b477bb7dbf17ae4eb6ca357e17ace5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TS_Windows_Miami
+    second: {fileID: 2100000, guid: 2ce9f84f13acc70479eaf45584510199, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalic_details_texture
+    second: {fileID: 2100000, guid: 46b9b9c8f889da14d812e1c07360b8f7, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

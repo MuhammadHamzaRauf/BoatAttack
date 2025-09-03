@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d054d6e948083b0469b2ff301c0adbab, type: 3}
+  m_Name: Rifles@vBot
+  m_EditorClassIdentifier: 
+  weaponCategories:
+  - Rifle
+  ikAdjustsLeft:
+  - name: Standing
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  - name: StandingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  - name: Crouching
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  - name: CrouchingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  ikAdjustsRight:
+  - name: Standing
+    weaponHandOffset:
+      position: {x: 0.0024115257, y: 0.0018953905, z: -0.22334911}
+      eulerAngles: {x: -1.61e-43, y: -1.61e-43, z: 1.61e-43}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: -1e-45, y: -1e-45, z: 1e-45}
+      eulerAngles: {x: 1.61e-43, y: 1.61e-43, z: 1.61e-43}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  - name: StandingAiming
+    weaponHandOffset:
+      position: {x: 0.21350548, y: 0.00017811364, z: 0.015033435}
+      eulerAngles: {x: 7.157269, y: 2.3787115, z: 261.78604}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0.10735643, y: 0.07739465, z: -0.15093908}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0.18537286, y: 318.53638, z: 359.39746}
+    spineOffset:
+      spine: {x: -35, y: 0}
+      head: {x: 0, y: 0}
+  - name: Crouching
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  - name: CrouchingAiming
+    weaponHandOffset:
+      position: {x: 0.00019851413, y: -0.05725265, z: -0.034842003}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0.00023320812, y: 0.0005043112, z: 0.03193003}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  standingRight:
+    name: Standing
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: -0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  standingAimingRight:
+    name: StandingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  standingLeft:
+    name: Standing
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  standingAimingLeft:
+    name: StandingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  crouchingRight:
+    name: Crouching
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  crouchingAimingRight:
+    name: CrouchingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  crouchingLeft:
+    name: Crouching
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}
+  crouchingAimingLeft:
+    name: CrouchingAiming
+    weaponHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    weaponHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHandOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    supportHintOffset:
+      position: {x: 0, y: 0, z: 0}
+      eulerAngles: {x: 0, y: 0, z: 0}
+    spineOffset:
+      spine: {x: 0, y: 0}
+      head: {x: 0, y: 0}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e10309df7a077a8479cf78132d393adc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 281329
+  packageName: Quick And Easy Car Racing
+  packageVersion: 1.0
+  assetPath: Assets/RC/Assets/Materials/Vehicle/Rally/Mat_Rally_Wheel_01.mat
+  uploadId: 655601
