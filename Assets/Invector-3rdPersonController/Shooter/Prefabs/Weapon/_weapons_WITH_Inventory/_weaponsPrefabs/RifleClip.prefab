@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 54709237094379402}
   - component: {fileID: 114607373720767222}
   - component: {fileID: 114969100261630918}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RifleClip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,13 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767185608509536}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -2.910383e-10, z: -9.663381e-11, w: 0.70710677}
   m_LocalPosition: {x: -61.783634, y: -0.042707007, z: 8.372822}
   m_LocalScale: {x: 0.17011845, y: 0.17011848, z: 0.17011853}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4976251083505176}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33177683133043528
 MeshFilter:
@@ -53,9 +54,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767185608509536}
   m_Material: {fileID: 13400000, guid: c77abc477d4de2a4197e1f08cebc364e, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.22, y: 0.55, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114808222739027650
@@ -84,10 +93,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767185608509536}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -119,6 +139,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114808222739027650}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -130,6 +151,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 114969100261630918}
+          m_TargetAssemblyTypeName: 
           m_MethodName: RemoveParent
           m_Mode: 1
           m_Arguments:
@@ -141,6 +163,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 54709237094379402}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_isKinematic
           m_Mode: 6
           m_Arguments:
@@ -189,12 +212,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913054698843558}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0016145093, y: 0, z: 0}
   m_LocalScale: {x: 587.8256, y: 587.82556, z: 587.8257}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4585161617856520}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33806215205991348
 MeshFilter:
@@ -215,10 +239,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -244,3 +270,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

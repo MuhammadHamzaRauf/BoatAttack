@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 224180674064565164}
   - component: {fileID: 222173094836778058}
   - component: {fileID: 114201162000505736}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: damageDisplay
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -28,9 +28,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.7326e-11}
   m_LocalScale: {x: 0.39745998, y: 0.39746016, z: 0.39746016}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224927597943708132}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -90,7 +91,7 @@ GameObject:
   - component: {fileID: 223227469771044648}
   - component: {fileID: 114629406046437506}
   - component: {fileID: 114957468957894260}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: HealthCanvas
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -107,11 +108,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000020861623}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224738956647123248}
   - {fileID: 224927597943708132}
   m_Father: {fileID: 4438953459364064}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -135,7 +136,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -161,6 +164,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &114957468957894260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224927597943708132}
   - component: {fileID: 114739597484999542}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: healthBar
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -205,11 +209,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.0918378e-11}
   m_LocalScale: {x: 0.0059810155, y: 0.0059810146, z: 0.0059810146}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224323490762143796}
   - {fileID: 224180674064565164}
   m_Father: {fileID: 224130812353770468}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -230,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -276,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4438953459364064}
   - component: {fileID: 114688557444408520}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: healthBarSprite
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -290,13 +295,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432975624153514}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.000000017237491, y: 0.72304827, z: 0.000000018097401, w: 0.6907975}
   m_LocalPosition: {x: 54.790737, y: 11.05863, z: 80.370544}
   m_LocalScale: {x: 1.4057602, y: 1.40577, z: 1.40577}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224130812353770468}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114688557444408520
 MonoBehaviour:
@@ -330,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224307113220329898}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -347,10 +353,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224484052019437632}
   m_Father: {fileID: 224738956647123248}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -366,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224323490762143796}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -383,10 +389,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224642619750479910}
   m_Father: {fileID: 224927597943708132}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -403,7 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224738956647123248}
   - component: {fileID: 114397524984041500}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: subhealth
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -420,11 +426,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.005981017, y: 0.005981014, z: 0.0059810155}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224090187538080738}
   - {fileID: 224307113220329898}
   m_Father: {fileID: 224130812353770468}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -445,6 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -492,7 +499,7 @@ GameObject:
   - component: {fileID: 224090187538080738}
   - component: {fileID: 222322816801348380}
   - component: {fileID: 114781179097325892}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Background
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -509,9 +516,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224738956647123248}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -541,6 +548,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -566,7 +574,7 @@ GameObject:
   - component: {fileID: 224642619750479910}
   - component: {fileID: 222029013376504806}
   - component: {fileID: 114926358742831720}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -583,9 +591,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224323490762143796}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -615,6 +623,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.23921569, b: 0.23921569, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -640,7 +649,7 @@ GameObject:
   - component: {fileID: 224484052019437632}
   - component: {fileID: 222813659389437090}
   - component: {fileID: 114295887449915044}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -657,9 +666,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224307113220329898}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -689,6 +698,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.057758622, g: 0.49264705, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

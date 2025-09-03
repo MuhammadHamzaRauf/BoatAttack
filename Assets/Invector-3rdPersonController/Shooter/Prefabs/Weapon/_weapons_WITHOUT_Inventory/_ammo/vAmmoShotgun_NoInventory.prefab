@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472818}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: bullet (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,13 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100268}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.46969, z: 0.00047493}
   m_LocalScale: {x: 1.576244, y: 2.3106024, z: 1.576244}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 415706}
   m_Father: {fileID: 499776}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &144698
 GameObject:
@@ -42,7 +43,7 @@ GameObject:
   - component: {fileID: 415706}
   - component: {fileID: 3330184}
   - component: {fileID: 2373932}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,12 +57,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144698}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0296, z: -0.000065376}
   m_LocalScale: {x: 1.1965028, y: 1.1965029, z: 1.1965029}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 472818}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3330184
 MeshFilter:
@@ -82,9 +84,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -96,6 +101,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -108,6 +114,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &165120
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +126,7 @@ GameObject:
   - component: {fileID: 491292}
   - component: {fileID: 3389222}
   - component: {fileID: 2353364}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,12 +140,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165120}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0296, z: 0.015916}
   m_LocalScale: {x: 1.1965028, y: 1.1965029, z: 1.1965029}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 463526}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3389222
 MeshFilter:
@@ -159,9 +167,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -173,6 +184,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -185,6 +197,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &168964
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +211,7 @@ GameObject:
   - component: {fileID: 11486056}
   - component: {fileID: 11491430}
   - component: {fileID: 11479930}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: vAmmoShotgun_NoInventory
   m_TagString: Action
   m_Icon: {fileID: 0}
@@ -212,15 +225,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168964}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0920388, y: 2.6219752, z: -0.031304263}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 404702}
   - {fileID: 472818}
   - {fileID: 463526}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &13688252
 CapsuleCollider:
@@ -230,8 +244,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168964}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.25
   m_Height: 1
   m_Direction: 1
@@ -268,6 +291,7 @@ MonoBehaviour:
   actionInput:
     useInput: 1
     isAxisInUse: 0
+    isUnityInput: 0
     keyboard: E
     keyboardAxis: 0
     joystick: A
@@ -284,6 +308,8 @@ MonoBehaviour:
   inputDelay: 0.1
   playAnimationWhileHoldingButton: 1
   doubleButtomTime: 0.25
+  canDoAction: 1
+  actionName: Action
   actionTag: Action
   disableOnStart: 0
   disableCollision: 0
@@ -295,10 +321,12 @@ MonoBehaviour:
   destroyDelay: 0
   customCameraState: Default
   playAnimation: 
+  crossFadeTransition: 0.25
+  animatorLayer: 0
+  endActionManualy: 0
   endExitTimeAnimation: 0.8
   animatorActionState: 0
   resetAnimatorActionState: 1
-  useAnimatorMatchTarget: 1
   matchTarget: {fileID: 0}
   avatarTarget: 0
   useLocalX: 0
@@ -402,10 +430,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  matchPos: {x: 0, y: 0, z: 0}
-  matchRot: 0
-  startMatchTarget: 0
-  endMatchTarget: 0
   onPressActionDelay: 0
   OnPressActionInput:
     m_PersistentCalls:
@@ -437,6 +461,15 @@ MonoBehaviour:
   OnPlayerExit:
     m_PersistentCalls:
       m_Calls: []
+  OnValidate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInvalidate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCancelAction:
+    m_PersistentCalls:
+      m_Calls: []
   weaponName: Shotgun Shells
   ammoID: 17
   ammoAmount: 99
@@ -465,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404702}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: bullet (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,13 +512,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172998}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.46969, z: -0.12667}
   m_LocalScale: {x: 1.576244, y: 2.3106024, z: 1.576244}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 487622}
   m_Father: {fileID: 499776}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183600
 GameObject:
@@ -496,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463526}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: bullet (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,13 +544,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183600}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.46969, z: 0.12867}
   m_LocalScale: {x: 1.576244, y: 2.3106024, z: 1.576244}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 491292}
   m_Father: {fileID: 499776}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196598
 GameObject:
@@ -529,7 +564,7 @@ GameObject:
   - component: {fileID: 487622}
   - component: {fileID: 3385008}
   - component: {fileID: 2359612}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,12 +578,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196598}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0296, z: -0.015916}
   m_LocalScale: {x: 1.1965028, y: 1.1965029, z: 1.1965029}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 404702}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3385008
 MeshFilter:
@@ -569,9 +605,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -583,6 +622,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -595,3 +635,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

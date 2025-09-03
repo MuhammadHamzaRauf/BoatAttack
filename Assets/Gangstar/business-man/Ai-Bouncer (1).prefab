@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 2068247688714910138}
   - component: {fileID: 9130781627438235708}
   - component: {fileID: 7101183938122010345}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ai-Bouncer (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22630,7 +22630,7 @@ GameObject:
   - component: {fileID: 3630221162905571437}
   - component: {fileID: 623483040971281207}
   - component: {fileID: 531380940056867928}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Gun (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26122,7 +26122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4603217743661682217}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: Handler (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36152,7 +36152,7 @@ GameObject:
   - component: {fileID: 38479364818514962}
   - component: {fileID: 4777606696758858486}
   - component: {fileID: 1242283381546277942}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}

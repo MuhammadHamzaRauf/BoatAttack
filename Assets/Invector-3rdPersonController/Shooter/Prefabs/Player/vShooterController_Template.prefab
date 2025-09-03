@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 351387983156780748}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: defaultHandler
   m_TagString: Ignore Ragdoll
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6560349278671702842}
   - component: {fileID: 4819491894951771767}
   - component: {fileID: 4771839018620184581}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: vThirdPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 3281311394268814354}
   - component: {fileID: 5561974984977264046}
   - component: {fileID: 1154028580707154473}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: vShooterController_Template
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2081,7 +2081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4487561552681406454}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: ThrowManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2115,7 +2115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7636575253742148544}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Invector Components
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2416,7 +2416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455891647436904}
   - component: {fileID: 1776797135780579715}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: vEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2652,7 +2652,7 @@ GameObject:
   - component: {fileID: 6069611680123918705}
   - component: {fileID: 6078806335118067569}
   - component: {fileID: 6087684361114352743}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vHandgun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -2768,7 +2768,7 @@ GameObject:
   - component: {fileID: 6063062470248352087}
   - component: {fileID: 6178111690900142607}
   - component: {fileID: 6178265137846815247}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: ShotgunHolder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -2899,7 +2899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6063362825964856675}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: LeftHandlers
   m_TagString: Ignore Ragdoll
   m_Icon: {fileID: 0}
@@ -2969,7 +2969,7 @@ GameObject:
   - component: {fileID: 6063297137983884763}
   - component: {fileID: 6079258846314187789}
   - component: {fileID: 6086926121740434721}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: rifle_renderer
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -3212,7 +3212,7 @@ GameObject:
   - component: {fileID: 6069555652895100363}
   - component: {fileID: 6177845679127064505}
   - component: {fileID: 6178239138646942449}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: HandgunHolder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -3312,7 +3312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6069437300458473495}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RightHandlers
   m_TagString: Ignore Ragdoll
   m_Icon: {fileID: 0}
@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 6069297650610968789}
   - component: {fileID: 6079079770076616283}
   - component: {fileID: 6086911554918413377}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vShotgun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -3464,7 +3464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6063359987135767167}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: WeaponClip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3498,7 +3498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069532589822132379}
   - component: {fileID: 2697121434264026518}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3547,7 +3547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069166775154423639}
   - component: {fileID: 5603675537705728940}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3663,7 +3663,7 @@ GameObject:
   - component: {fileID: 6063359544084932965}
   - component: {fileID: 6079855497584073735}
   - component: {fileID: 6088360590405475781}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vShotgun-detach
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -3746,7 +3746,7 @@ GameObject:
   - component: {fileID: 6063343986270821931}
   - component: {fileID: 6178346414347583955}
   - component: {fileID: 6178681146978579931}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: BodySnaps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3981,7 +3981,7 @@ GameObject:
   - component: {fileID: 6069405847816291101}
   - component: {fileID: 6178051053569072451}
   - component: {fileID: 6178206621592302579}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RifleHolder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -4080,7 +4080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6069309680301780531}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: defaultHandler
   m_TagString: Ignore Ragdoll
   m_Icon: {fileID: 0}
@@ -4113,7 +4113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063342106109655047}
   - component: {fileID: 5367298191778959394}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4160,7 +4160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6069581980648360581}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: WeaponHolders
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -4355,7 +4355,7 @@ GameObject:
   - component: {fileID: 6069464225712441071}
   - component: {fileID: 6178676533538237391}
   - component: {fileID: 6178017696721170337}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: BowHolder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -4540,7 +4540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063295139077183673}
   - component: {fileID: 1475935474355805607}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4650,7 +4650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3465139963038989160}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 3D Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4683,6 +4683,10 @@ PrefabInstance:
     - target: {fileID: 100756, guid: 041726e4330290b43ac95e1cf84d3636, type: 3}
       propertyPath: m_Name
       value: AimCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 100756, guid: 041726e4330290b43ac95e1cf84d3636, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 22404982, guid: 041726e4330290b43ac95e1cf84d3636, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4862,6 +4866,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4021423223161812189, guid: 041726e4330290b43ac95e1cf84d3636,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4380552925330519903, guid: 041726e4330290b43ac95e1cf84d3636,
         type: 3}
       propertyPath: m_Text
@@ -5017,9 +5026,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4487561552681406454}
     m_Modifications:
+    - target: {fileID: 1143205119715760, guid: 322f523885a65e746816ed5774b95d38, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1243011048420782, guid: 322f523885a65e746816ed5774b95d38, type: 3}
       propertyPath: m_Name
       value: ThrowManager-Standalone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243011048420782, guid: 322f523885a65e746816ed5774b95d38, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830074489551034, guid: 322f523885a65e746816ed5774b95d38, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4909563269784334, guid: 322f523885a65e746816ed5774b95d38, type: 3}
       propertyPath: m_RootOrder
@@ -5070,6 +5091,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1668621042283379575, guid: 322f523885a65e746816ed5774b95d38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003439988588105210, guid: 322f523885a65e746816ed5774b95d38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646621476385111641, guid: 322f523885a65e746816ed5774b95d38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203816644176756243, guid: 322f523885a65e746816ed5774b95d38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5089,6 +5130,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4487561552681406454}
     m_Modifications:
+    - target: {fileID: 2813104930432790152, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4963600302941516693, guid: a630b62c03675924ca5dc678577bbd3a,
         type: 3}
       propertyPath: m_RootOrder
@@ -5144,10 +5190,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969072811000178721, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969509608163637547, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4969541416156210485, guid: a630b62c03675924ca5dc678577bbd3a,
         type: 3}
       propertyPath: m_Name
       value: ThrowManager-Inventory_Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969541416156210485, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042441925802453996, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880575681050205537, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532166234355379906, guid: a630b62c03675924ca5dc678577bbd3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5168,6 +5244,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4487561552681406454}
     m_Modifications:
+    - target: {fileID: 2813104930432790152, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4963600302941516693, guid: a103a69a923bfe449bec391ee2d584ca,
         type: 3}
       propertyPath: m_RootOrder
@@ -5223,10 +5304,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969072811000178721, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969509608163637547, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4969541416156210485, guid: a103a69a923bfe449bec391ee2d584ca,
         type: 3}
       propertyPath: m_Name
       value: ThrowManager-Inventory_EquipArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969541416156210485, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042441925802453996, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880575681050205537, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532166234355379906, guid: a103a69a923bfe449bec391ee2d584ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

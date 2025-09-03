@@ -2497,7 +2497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145914361767151472}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7634,7 +7634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459936921791777803}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rotor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7668,7 +7668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8708391237234973661}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Helicopter_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7708,7 +7708,7 @@ GameObject:
   - component: {fileID: 6760093804205100762}
   - component: {fileID: 760110272392951936}
   - component: {fileID: 2375800164550509426}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Pale1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7874,7 +7874,7 @@ GameObject:
   - component: {fileID: 3437238934025294478}
   - component: {fileID: 8950810588860455110}
   - component: {fileID: 1432642810593003995}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7957,7 +7957,7 @@ GameObject:
   - component: {fileID: 7171430834444443875}
   - component: {fileID: 2850004502767671395}
   - component: {fileID: 1782325458754892611}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Pale2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 430638}
   - component: {fileID: 19862294}
   - component: {fileID: 19914654}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: SmokeDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

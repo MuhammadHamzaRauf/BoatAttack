@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124308106356231457}
   - component: {fileID: 3430479744401341591}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RightHandlers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 119092479965478243}
   - component: {fileID: 5383311625414701718}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: LeftHandlers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124112230817998647}
   - component: {fileID: 10090214996683515}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124112231536748327}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: shieldHandler
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -4983,7 +4983,7 @@ GameObject:
   - component: {fileID: 124112230664783761}
   - component: {fileID: 10090152404587687}
   - component: {fileID: 10090216412589057}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RightHolder@Sword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5057,7 +5057,7 @@ GameObject:
   - component: {fileID: 124112231134216073}
   - component: {fileID: 10090217027575383}
   - component: {fileID: 7605366568735261118}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: Hips_Holder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5279,7 +5279,7 @@ GameObject:
   - component: {fileID: 124112231439217011}
   - component: {fileID: 127200038503927039}
   - component: {fileID: 137198109987721015}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKatanaHolder (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5363,7 +5363,7 @@ GameObject:
   - component: {fileID: 124112228311823399}
   - component: {fileID: 10090153060637093}
   - component: {fileID: 10090153537362077}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: LeftHolder@Sword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5437,7 +5437,7 @@ GameObject:
   - component: {fileID: 124112231582291671}
   - component: {fileID: 127200037178126133}
   - component: {fileID: 137198112502847701}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKatanaHolder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -10274,7 +10274,7 @@ GameObject:
   - component: {fileID: 124112230147757905}
   - component: {fileID: 10090217059562113}
   - component: {fileID: 10090213934929271}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: LeftHolder@Katana
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -10422,7 +10422,7 @@ GameObject:
   - component: {fileID: 124112228930592879}
   - component: {fileID: 10090214926276781}
   - component: {fileID: 10090216063507153}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RightHolder@Katana
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -10496,7 +10496,7 @@ GameObject:
   - component: {fileID: 124112228334076913}
   - component: {fileID: 10090215836562667}
   - component: {fileID: 10090215199786103}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: LeftHolder@GreatKatana
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -10805,7 +10805,7 @@ GameObject:
   - component: {fileID: 124112230733801665}
   - component: {fileID: 127200031659555865}
   - component: {fileID: 137198105108257993}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKanata
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -10979,7 +10979,7 @@ GameObject:
   - component: {fileID: 123526382153426847}
   - component: {fileID: 9855165992117265}
   - component: {fileID: 7236028248937913285}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: vMeleeController_Template
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -12464,7 +12464,7 @@ GameObject:
   - component: {fileID: 124112230796228655}
   - component: {fileID: 127200031786309905}
   - component: {fileID: 137198112594307911}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: SwordV_short
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -12546,7 +12546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124112236872338643}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: defaultHandler
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -12580,7 +12580,7 @@ GameObject:
   - component: {fileID: 124112228735015791}
   - component: {fileID: 10090216976845207}
   - component: {fileID: 10090216052174367}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: RightHolder@GreatKatana
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -17529,7 +17529,7 @@ GameObject:
   - component: {fileID: 262878135349070987}
   - component: {fileID: 278914133336761513}
   - component: {fileID: 286662314566244973}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKatana_Long_Holder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -17845,7 +17845,7 @@ GameObject:
   - component: {fileID: 262878133423646263}
   - component: {fileID: 278914133841648223}
   - component: {fileID: 286662314042536169}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKanata
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -18014,7 +18014,7 @@ GameObject:
   - component: {fileID: 262878131221023783}
   - component: {fileID: 278914133470350667}
   - component: {fileID: 286662315150249453}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKanata_Long
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -18129,7 +18129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 262878137450305019}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: Holder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -18276,7 +18276,7 @@ GameObject:
   - component: {fileID: 262878133759689521}
   - component: {fileID: 278914139755863895}
   - component: {fileID: 286662314114698917}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: SwordV_short
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -18555,7 +18555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936034333992411548}
   - component: {fileID: 4409511358553235927}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: BodySnapping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18768,7 +18768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 977491725807327619}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Invector Components
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18840,7 +18840,7 @@ GameObject:
   - component: {fileID: 2559204860786661774}
   - component: {fileID: 5514797716039634715}
   - component: {fileID: 6580011133726404494}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19179,7 +19179,7 @@ GameObject:
   - component: {fileID: 7550522103473737415}
   - component: {fileID: 7589656414686639183}
   - component: {fileID: 7573224915709933195}
-  m_Layer: 14
+  m_Layer: 18
   m_Name: LookTarget
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -19257,7 +19257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7550522106232070817}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: shieldHandler
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19289,7 +19289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7550522101568571733}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: defaultHandler
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19322,7 +19322,7 @@ GameObject:
   - component: {fileID: 7698295491704375565}
   - component: {fileID: 7687326109744668975}
   - component: {fileID: 7677042420466540523}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKatana_Long_Holder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19406,7 +19406,7 @@ GameObject:
   - component: {fileID: 7698295495832160673}
   - component: {fileID: 7687326109609953485}
   - component: {fileID: 7677042421895563371}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: vKanata_Long
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19573,7 +19573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7698295491733708069}
-  m_Layer: 15
+  m_Layer: 19
   m_Name: Holder
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19604,7 +19604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5041179588462682741}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 3D Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

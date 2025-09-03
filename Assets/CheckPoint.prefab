@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6117097644400066931}
   - component: {fileID: 3998580634215435287}
   - component: {fileID: 2382996312898133100}
-  m_Layer: 16
+  m_Layer: 20
   m_Name: CheckPoint
   m_TagString: PlayerToCar
   m_Icon: {fileID: 0}
@@ -4941,6 +4941,8 @@ MonoBehaviour:
   CarSitPos: {fileID: 0}
   CarEnterPos: {fileID: 0}
   CarExitPos: {fileID: 0}
+  Totaldrivers: []
+  driver: {fileID: 0}
   CheckPoint: {fileID: 0}
 --- !u!1 &1540278763773242785
 GameObject:

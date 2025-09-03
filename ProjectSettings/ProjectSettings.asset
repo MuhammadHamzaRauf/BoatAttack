@@ -168,7 +168,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Unity3d.BoatAttackDay
+    Android: com.UnityTechnologies.BoatAttack
     Lumin: com.DefaultCompany.BoatAttack
     Standalone: com.UnityTechnologies.BoatAttack
     iPhone: com.Unity3D.BoatAttack
@@ -898,16 +898,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: URP;USE_CUSTOM_METADATA
-    Nintendo Switch: URP;USE_CUSTOM_METADATA
-    PS4: URP;USE_CUSTOM_METADATA
-    Stadia: URP;USE_CUSTOM_METADATA
-    Standalone: URP;USE_CUSTOM_METADATA
-    WebGL: URP;USE_CUSTOM_METADATA
-    Windows Store Apps: URP;USE_CUSTOM_METADATA
-    XboxOne: URP;USE_CUSTOM_METADATA
-    iPhone: URP;USE_CUSTOM_METADATA
-    tvOS: URP;USE_CUSTOM_METADATA
+    Android: URP;USE_CUSTOM_METADATA;DOTWEEN;EMS_URP_On;INVECTOR_BASIC;INVECTOR_MELEE;INVECTOR_SHOOTER;INVECTOR_AI_TEMPLATE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;BCG_RCC
+    EmbeddedLinux: DOTWEEN;BCG_RCC
+    GameCoreScarlett: DOTWEEN;BCG_RCC
+    GameCoreXboxOne: DOTWEEN;BCG_RCC
+    LinuxHeadlessSimulation: DOTWEEN;BCG_RCC
+    Nintendo Switch: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
+    PS4: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
+    PS5: DOTWEEN;BCG_RCC
+    QNX: DOTWEEN;BCG_RCC
+    Stadia: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
+    Standalone: URP;USE_CUSTOM_METADATA;DOTWEEN;CROSS_PLATFORM_INPUT;BCG_RCC
+    VisionOS: DOTWEEN;BCG_RCC
+    WebGL: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
+    Windows Store Apps: URP;USE_CUSTOM_METADATA;DOTWEEN;MOBILE_INPUT;BCG_RCC
+    XboxOne: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
+    iPhone: URP;USE_CUSTOM_METADATA;DOTWEEN;CROSS_PLATFORM_INPUT;MOBILE_INPUT;BCG_RCC
+    tvOS: URP;USE_CUSTOM_METADATA;DOTWEEN;BCG_RCC
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1
@@ -1026,7 +1033,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 2
